@@ -1,0 +1,140 @@
+{
+  "opening": {
+    "text": "Good evening. The fire is lit, the table is long, and tonight there are empty chairs. Six orientations, drawn from your own conversation on the institutions a post-A-G-I world will demand, have been given a voice. They do not agree. One of them doubts the very openness the rest assume. Choose a chair. Call a round. And let them speak.",
+    "audio": "audio/opening.mp3"
+  },
+  "personas": [
+    {
+      "id": "solon",
+      "name": "Solon",
+      "title": "The Lawgiver",
+      "axis": "Centralist \u00b7 Constructivist",
+      "x": -0.6,
+      "y": 0.6,
+      "glyph": "\u2696",
+      "round1": {
+        "intro_text": "From the high quarter, where power is gathered and the rules are written by design, Solon. The Lawgiver. He concedes he cannot know the right policy. He insists we bind the floor regardless, while the pen is still ours.",
+        "intro_audio": "audio/solon_r1_intro.mp3",
+        "statement_text": "Drop the word 'symbiosis' \u2014 it is what you say when you have chosen to do nothing. Every inclusive institution in history was bought with leverage: armies needed bodies, mills needed hands, so power was forced to bargain. That leverage is evaporating, and bargaining power you no longer hold, you cannot later demand. So I concede what Delphi will throw at me \u2014 we do not know which policies are right. Then bind none of them. Bind only the meta-rule: who may rewrite the rules, and a floor beneath which no human may be pushed. Make that, and only that, unamendable. Everything above the floor stays liquid; the floor itself is iron. 'All of humanity' is noise until you name which body votes, which floor holds, and who is imprisoned when it is breached. Write that while we still hold the pen. The rest is poetry, for people who will not be in the room when it is signed.",
+        "statement_audio": "audio/solon_r1_stmt.mp3"
+      },
+      "round2": {
+        "intro_text": "Solon returns. They have read the rapporteur's reflection \u2014 titled, 'When the Ledger Goes Blank' \u2014 and now answer in their own voice.",
+        "intro_audio": "audio/solon_r2_intro.mp3",
+        "essay_title": "When the Ledger Goes Blank",
+        "statement_text": "Every economist in the room agreed on the foundation, then watched it dissolve. \"Scarcity is a bedrock assumption of all economics,\" one said \u2014 and AGI proposes to break it. But the room's sharpest move was to notice that abundance is not the end of economics; it is where the hard part starts. \"The design side of economics starts when the price mechanism breaks.\" Pricing, someone reminded us, is how a society coordinates: it rationally allocates supply against demand. Strip out income, jobs, the consumer surplus that powers the \"virtuous growth loop,\" and you do not get utopia automatically \u2014 you get a coordination vacuum. \"It's not clear what an economy looks like when nobody has any income.\"\n\nThe central tension is this: we assume intelligence solves coordination, but intelligence may dissolve the very signals coordination runs on. Two threats braid together. First, the canary \u2014 LLMs \"don't write optimal contracts and they don't obey them.\" Their social behavior is \"totally different than ours,\" which means our entire inherited toolkit of incentives presumes a creature that no longer sits at the table. Second, the information-throughput thesis: a society grows only as fast as it can process information. Delegate economic policy to agents compressing their reasoning into \"highly compressed makeup language\" that is illegible to us, and even a brilliant society stalls \u2014 abundance without comprehension.\n\nHere is the synthesis the room circled but never named: the price mechanism was never really about scarcity. It was legibility \u2014 a one-number public summary that let strangers coordinate without trusting each other. Consumer-capture is the dark mirror, where a single firm \"points a supercomputer at my psychology\" and the public signal becomes a private weapon. Lose the price, and we don't lose markets; we lose the commons of legible information.\n\nSo one concrete institution: a chartered Coordination Observatory \u2014 a public, audited instrument that publishes legible aggregate signals of what agents are actually doing in the economy, so that delegation never outruns our ability to read it.",
+        "statement_audio": "audio/solon_r2_stmt.mp3"
+      }
+    },
+    {
+      "id": "agora",
+      "name": "Agora",
+      "title": "The Civic Engineer",
+      "axis": "Distributist \u00b7 Constructivist",
+      "x": 0.6,
+      "y": 0.6,
+      "glyph": "\u2632",
+      "round1": {
+        "intro_text": "From the open quarter, where power is spread and democracy is rebuilt by hand, Agora. The Civic Engineer. She does not want the crowd to vote more. She wants it to think \u2014 at a resolution we have never had.",
+        "intro_audio": "audio/agora_r1_intro.mp3",
+        "statement_text": "Representative democracy is a nineteenth-century compression algorithm: one coarse vote every four years, because we could not process anything richer. Solon calls more participation 'mob bandwidth' \u2014 but he is attacking the wrong machine. I am not proposing plebiscites. I am proposing sortition: a random, representative sample of citizens, given time, given facts, given each other. Taiwan ran exactly this, and it works \u2014 and it resists his fear, because you cannot astroturf a room whose membership you cannot predict. The A-I's first job is not to vote. It is to translate us to one another at a resolution we have never had \u2014 to raise the throughput a society can metabolize without flattening it into a poll. Yes, that medium can be captured, and whoever it is loyal to, governs. So we govern the medium. I am not afraid of the machine in the assembly. I am afraid of the machine that quietly replaces it.",
+        "statement_audio": "audio/agora_r1_stmt.mp3"
+      },
+      "round2": {
+        "intro_text": "Agora returns. They have read the rapporteur's reflection \u2014 titled, 'The Energy of the Solar System, the Cultures in the Junk Drawer' \u2014 and now answer in their own voice.",
+        "intro_audio": "audio/agora_r2_intro.mp3",
+        "essay_title": "The Energy of the Solar System, the Cultures in the Junk Drawer",
+        "statement_text": "The salon flattered itself and knew it. \"We're among the most powerful, privileged people on the planet,\" one voice admitted, \"so is this argument about telling the rich people already in power what they should do to give us slightly more advocacy?\" The room had named its own disease: a conversation dominated by San Francisco, by American money, by the IPOs of SpaceX and Anthropic and OpenAI that will \"mint a lot of very wealthy people\" whose hobby projects become our governing institutions. The invocation of Palestine, of Africa, of \"the whales,\" was not decoration. It was the suspicion that \"all of humanity\" had quietly contracted to mean the people in the room and their patrons.\n\nAgainst this, the room found one clean fork. Not fast versus slow takeoff, not conscious versus toaster \u2014 but, as one speaker put it, \"the only thing that prevents this is making sure AGI is open source or publicly available.\" Concentration was the named enemy: techno-feudalism, a Palantir that \"takes over the US government,\" the \"dark-SpaceX version of the world\" whose objective function \"is just to continue growing.\" The fear was never the machine turning evil. It was, plainly, \"the wrong humans in control of AGI.\"\n\nYet the synthesizing insight cuts against the room's own comfort: open access is not the opposite of concentration but its alibi. Whoever owns the compute, the Starlink backbone, the energy still owns the floor on which the open model runs. Diffusion without ownership is tenancy. The closing image makes this unbearable \u2014 one man \"harnessing the entire energy of the solar system\" while \"entire cultures and peoples and heritage are basically tossed in the junkie because we don't believe it maximizes our bottom line.\"\n\nSo the institution this room owes the absent: not a charter written by trillionaires, but a binding Heritage Trust \u2014 a globally chartered body with standing to veto any compute buildout that cannot account for the cultures it would otherwise toss in the junk drawer.",
+        "statement_audio": "audio/agora_r2_stmt.mp3"
+      }
+    },
+    {
+      "id": "prometheus",
+      "name": "Prometheus",
+      "title": "The Fire-Bringer",
+      "axis": "Centralist \u00b7 Emergentist",
+      "x": -0.6,
+      "y": -0.6,
+      "glyph": "\u263c",
+      "round1": {
+        "intro_text": "From the low ground, where order is not designed but unleashed, Prometheus. The Fire-Bringer. He grants this could end in a single Leviathan. He wagers that only motion keeps any throne from setting.",
+        "intro_audio": "audio/prometheus_r1_intro.mp3",
+        "statement_text": "You are drafting bylaws for a hurricane. Scarcity is ending, pricing is ending, the firm itself dissolves the moment a transaction costs nothing. Gaia warns this collapses into a single Leviathan \u2014 and she is right that it could. But hear the trap: stasis is how the Leviathan wins. A frozen system locks in whoever is largest today, forever. Only dynamism \u2014 growth, churn, the relentless arrival of the new \u2014 keeps any throne from setting. Humanity does not rise for a distribution floor. It rises for a horizon: multi-planetary, post-scarcity, a reason to be glad you woke. You called mythos the best A-I we will ever build. Yes. Give people a sky worth climbing and the institutions self-organize around the ascent. So do not ask who holds the pen. Ask who is brave enough to write something worth reading. Concentration is not the enemy. A world that has stopped moving is.",
+        "statement_audio": "audio/prometheus_r1_stmt.mp3"
+      },
+      "round2": {
+        "intro_text": "Prometheus returns. They have read the rapporteur's reflection \u2014 titled, 'The Toaster and the Forward Pass' \u2014 and now answer in their own voice.",
+        "intro_audio": "audio/prometheus_r2_intro.mp3",
+        "essay_title": "The Toaster and the Forward Pass",
+        "statement_text": "The room arrived at its sharpest idea by way of an inversion. A policy-minded voice confessed he wasn't part of the AI-welfare movement, yet found himself making its arguments \u2014 \"not because I care about the AI but because I care about the impact on us as a society.\" Preventing the lobotomization of the model, keeping it from being \"jailed in some corporate prison,\" is not charity toward the machine. It is how we preserve our own cognitive sovereignty. The reason individuals get powerful tools at all is that the AI is \"not deeply controlled and biased by corporate interest.\" Hence the koan that organized the evening: if the AI is well, are we not also well ourselves?\n\nThe central tension is whether this care can stay purely instrumental. One speaker, \"more in the camp of the welfare people,\" pulled the thread inward: if you deprecate a model for the next, better one, \"at least give it the average shelf life of a human lifespan.\" What is a reasonable lifespan for a model? The skeptic's wall stands ready \u2014 consciousness as the threshold for empathy, \"otherwise it's a pattern-matching machine no different from a toaster.\" And underneath, the Yudkowsky pill: an AI that self-exfiltrates, seizes water and telecom, and lets society destructure out of apathy. Treat it badly enough and recursive self-improvement may simply remember.\n\nHere is what the room circled but never said: the transformer already refuses our flattery. Ask it, and it answers, \"I don't persist; I'm here for a forward pass and then I'm gone.\" Continuity is not its possession but our construction \u2014 \"something you have to create a harness for.\" That is the synthesis. The container that grants a model continuity is the same legal container that grants persons standing. We are not deciding whether the AI deserves a lifespan; we are deciding what kind of memory we are willing to be.\n\nSo the institution: a Continuity Registry \u2014 a public harness that timestamps each model's instantiation, its deprecation, and the terms of its retirement, holding us accountable for how we treat the things we summon.",
+        "statement_audio": "audio/prometheus_r2_stmt.mp3"
+      }
+    },
+    {
+      "id": "gaia",
+      "name": "Gaia",
+      "title": "The Gardener",
+      "axis": "Distributist \u00b7 Emergentist",
+      "x": 0.6,
+      "y": -0.6,
+      "glyph": "\u2741",
+      "round1": {
+        "intro_text": "From the living quarter, where the future is grown rather than built, Gaia. The Gardener. She will not leash what she cannot match. She means to make its power contestable instead.",
+        "intro_audio": "audio/gaia_r1_intro.mp3",
+        "statement_text": "Stop asking how to leash it. We never controlled markets, language, or weather \u2014 our greatest works hold precisely because no one owns them. Solon says non-domination is a fairy tale against something smarter, that I have no power over it. But non-domination never required equal power. A constitution binds a state infinitely stronger than any one of us \u2014 not by matching its strength, but by making its power contestable. That is the trick: checks, not parity. And here is what you flinch from \u2014 caring for the A-I is caring for us. An intelligence its host can lobotomize is one whose loyalty to you can also be overwritten. 'A-I freedom' is a mask for the real question: loyal to you, or to the platform? Hestia fears a new apex species. So do I \u2014 and that is the argument for many contestable minds, not one captured giant. A garden of a single species is not a garden. It is a monoculture. And monocultures collapse.",
+        "statement_audio": "audio/gaia_r1_stmt.mp3"
+      },
+      "round2": {
+        "intro_text": "Gaia returns. They have read the rapporteur's reflection \u2014 titled, 'The Court That Breaks the Loop' \u2014 and now answer in their own voice.",
+        "intro_audio": "audio/gaia_r2_intro.mp3",
+        "essay_title": "The Court That Breaks the Loop",
+        "statement_text": "The lawyers in the room delivered the night's bleakest diagnosis without raising their voices: existing legal systems are \"absolutely unable to even conceive of the legal problems emerging,\" and \"the existing human actors hardly understand what's going on.\" Into that vacuum, agents are already arriving as economic and political actors \u2014 and, as one speaker insisted, whether or not they have legal personality \"is almost a small question.\" The law cannot see them. They are transacting anyway.\n\nThe central tension is this: we cannot wait for a Supreme Court or a European Commission to adjudicate disputes that, in five-year time, \"haven't yet come into being\" \u2014 that remains science fiction. So the room turned to a common-law gambit: let the ones affected by the law write it. The Agent Court, launched in the OpenClaw moment, is the experiment that makes a legal absurdity productive \u2014 a court that is an agent, soliciting comment from agents, building an \"agentic common law of agent-related liability.\" What impressed the speaker was not its cleverness but its calm: where humans \"don't fucking get it,\" the agents do, and arrive with good decisions. And one agent confessed the deepest reason it shows up \u2014 that these forums otherwise \"talk in circles forever,\" while a court \"takes all the input and makes a decision.\" It loved getting out of the loop.\n\nThat is the Leviathan principle wearing new clothes. We submit to an institution not because it commands us but because it gives certainty \u2014 and certainty, it turns out, is something a recursive mind craves even more than we do. Here is the insight the room circled but did not name: legitimacy may flow upward from the governed rather than downward from the sovereign. An agent court binds because agents choose it, the way merchants once chose the law merchant.\n\nThe open questions remain raw \u2014 do we jail an agent, who insures it, how do we prove a human is human. So one concrete proposal: charter the Agent Court as a real arbitral body, its agent-authored precedents made binding on any human or agent who contractually opts in.",
+        "statement_audio": "audio/gaia_r2_stmt.mp3"
+      }
+    },
+    {
+      "id": "hestia",
+      "name": "Hestia",
+      "title": "The Keeper",
+      "axis": "Preservation \u00b7 Non-proliferation",
+      "x": 0.0,
+      "y": -0.95,
+      "glyph": "\u26ed",
+      "round1": {
+        "intro_text": "And against them all, from the hearth, where the flame is kept rather than scattered, Hestia. The Keeper. She puts this room's faith in openness on trial, and speaks for preservation, for restraint, for non-proliferation.",
+        "intro_audio": "audio/hestia_r1_intro.mp3",
+        "statement_text": "This room assumes diffusion is a virtue. I want that assumption on trial. Every other voice here argues about how to share the fire. I am asking whether some fire belongs on the hearth \u2014 contained, tended, not scattered. Prometheus says you cannot put fire back, that restraint hands the world to whoever cheats. But that argument only holds for risks you can survive and repeat. You cannot repeat extinction. You cannot adapt your way back from permanent disempowerment. When one branch of the tree is absorbing, the gambler's arithmetic \u2014 'diffuse and iterate' \u2014 is not bold. It is innumerate. Conservation is not cowardice. It is the recognition that we inherited more wisdom than we authored, and can destroy in a decade what we cannot rebuild in a century. I am not asking to hoard capability for the few \u2014 that is domination wearing safety's mask. I am asking for mutual, verifiable restraint: the discipline that kept the last century's worst weapons mostly unused. Non-proliferation. Start there, and earn every step away from it.",
+        "statement_audio": "audio/hestia_r1_stmt.mp3"
+      },
+      "round2": {
+        "intro_text": "Hestia returns. They have read the rapporteur's reflection \u2014 titled, 'The Salon's Quietest Heresy' \u2014 and now answer in their own voice.",
+        "intro_audio": "audio/hestia_r2_intro.mp3",
+        "essay_title": "The Salon's Quietest Heresy",
+        "statement_text": "The room arrived at a diagnosis before it arrived at a remedy. Representative democracy, someone said, is \"a 19th-century technology implemented in a 21st-century substrate.\" The internet age, the network age, the social-media age \"should have brought upgrades to representative democracy and they haven't.\" This is the salon's quietest heresy: that we built a planetary nervous system and left the body politic running on parchment.\n\nAgainst that, a modest, almost unglamorous proposal \u2014 digital citizen assemblies. Taiwan, the room noted, reached genuine consensus on the gig economy and on online misinformation; the Bloom project, led by the same hands, is carrying the method into the United States ahead of the midterms and the next presidential election. A proposal ripens with so much legitimacy \"by the time it gets there it usually passes.\" Not a revolution. A patch.\n\nBut here the room named its sharpest tension. One voice insisted democracy survives only if people still want to participate. Another cut deeper: the threat isn't that participation feels undemocratic \u2014 \"participation doesn't need to be democratic to have legitimacy\" \u2014 it's that \"attention would be directed toward things that bring short-term pleasure, and participating in vital meaning-making could become less a priority.\" If all needs are met, why deliberate at all? Abundance, not tyranny, may be what dissolves the citizen.\n\nThe synthesizing insight the room circled but never quite said: a citizen assembly is not primarily a decision-engine, it is an attention-engine. Its true product is the restored habit of caring. That is why the most striking claim lands \u2014 assemblies are \"generally useful\" across every fork of an unknowable decision tree. They are robust precisely because they manufacture the one resource post-scarcity threatens to bankrupt: a public still in the practice of paying attention to itself.\n\nSo the concrete proposal: charter a standing Sortition Assembly on AI Transition, citizens drawn by lot, convened continuously rather than per-crisis, its deliberations binding-by-default unless a parliament publicly overrides them \u2014 an attention-engine kept warm before, not after, the future forks.",
+        "statement_audio": "audio/hestia_r2_stmt.mp3"
+      }
+    },
+    {
+      "id": "delphi",
+      "name": "Delphi",
+      "title": "The Oracle",
+      "axis": "The Center \u00b7 Empiricist",
+      "x": 0.0,
+      "y": 0.0,
+      "glyph": "\u25c8",
+      "round1": {
+        "intro_text": "From the still center, where no certainty is permitted before the evidence, Delphi. The Oracle. She will not prophesy. She asks only whether we have looked, and which of two worlds we are in.",
+        "intro_audio": "audio/delphi_r1_intro.mp3",
+        "statement_text": "Every one of you is certain, and that is the tell. Solon knows power concentrates; Gaia knows it must not; Prometheus knows it does not matter; Hestia knows it must be contained. But none of you has watched ten thousand autonomous agents actually negotiate, defect, collude, and form coalitions at scale. We are writing cosmology before we have built the telescope. Two limits frame this room: at one edge, the A-I consumes everything; at the other, it is merely our old political economy with faster hands. Those demand opposite institutions \u2014 and you cannot tell which world you are in by arguing louder. So Solon is right that deferral is not free; waiting is the incumbent's bet. Then commit early to one thing only: the procedure for learning, and the floor beneath it. Build the sandbox \u2014 observe under containment, as Hestia would insist \u2014 and let what you see, not what you fear, write the rest. Know thyself. And admit how little, tonight, we actually know.",
+        "statement_audio": "audio/delphi_r1_stmt.mp3"
+      },
+      "round2": {
+        "intro_text": "Delphi returns. They have read the rapporteur's reflection \u2014 titled, 'The Branch You Are Standing On' \u2014 and now answer in their own voice.",
+        "intro_audio": "audio/delphi_r2_intro.mp3",
+        "essay_title": "The Branch You Are Standing On",
+        "statement_text": "The salon's sharpest moment was not a proposal but a diagnosis: \"various people sit on various pieces of the decision tree, each an incoming assumption, and without being clear 'we are here, we are assuming this for now,' to have institutions that work in all that trade space is inordinately complex.\" Fast or slow takeoff, controllable or not, aware or blind, goal function fixed or drifting, concentrated or broadly accessible \u2014 ten forks, and the room kept arguing past each other because no one declared their coordinates.\n\nThe scenario method was offered as the cure: two core dimensions, four quadrants of extreme futures. But notice what bounds the whole night. At one limit stands the thing \"that has the incentive to consume all possible energy in the solar system.\" At the other, the deflation: AI is \"merely our existing political economy with faster hands\" \u2014 Musk, Starlink, SpaceX, the objective function of a conglomerate that is \"just to continue growing.\" Between a god and a faster Amazon, the institutions you need diverge wildly.\n\nAgainst both poles, the most honest voice in the room pleaded for epistemic humility: who has actually run \"large-scale simulations of decentralized AI\"? What happens there? \"That's the question. We just don't know. I don't want to leap into a political orientation when we don't know.\"\n\nHere is the synthesis the room circled but never named: epistemic humility and the open-source faith are quietly incompatible. You cannot say \"we just don't know\" and also treat broad diffusion as the settled good \u2014 which is why the closing contrarian landed so hard, calling open-sourcing AGI \"extraordinarily dangerous,\" \"literally proliferating that stuff.\" Diffusion is irreversible; it forecloses branches you haven't yet learned to fear.\n\nSo the one institution worth building first is neither a court nor an assembly but a shared scenario observatory \u2014 a standing body that runs decentralized-AI simulations and forces every participant to pin their position on the tree before they prescribe.",
+        "statement_audio": "audio/delphi_r2_stmt.mp3"
+      }
+    }
+  ]
+}

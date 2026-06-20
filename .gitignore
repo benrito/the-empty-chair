@@ -1,0 +1,11 @@
+# Build tooling + private source — not published to the public site
+generate.py
+transcript.md
+essays.json
+assignment.json
+second-statements/
+versions/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/

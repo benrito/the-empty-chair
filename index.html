@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Empty Chair — An AGI Salon</title>
+<style>
+  :root{
+    --bg:#0d0b08; --ink:#e8e0d2; --muted:#9a907d; --line:#2c261d; --gold:#c9a44c;
+    --solon:#7f8fb0; --agora:#5fae8c; --prometheus:#d2622f; --gaia:#8aa84a; --hestia:#c98a52; --delphi:#b487c4;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:
+      radial-gradient(1200px 700px at 50% -10%, #1b160d 0%, transparent 60%),
+      radial-gradient(900px 600px at 50% 120%, #15110a 0%, transparent 55%), var(--bg);
+    color:var(--ink); font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    -webkit-font-smoothing:antialiased; min-height:100%;}
+  .wrap{max-width:1200px;margin:0 auto;padding:34px 26px 80px}
+  header.top{text-align:center;margin-bottom:6px}
+  .kicker{letter-spacing:.42em;text-transform:uppercase;font-size:11px;color:var(--gold);
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;margin-bottom:16px}
+  h1{font-size:clamp(28px,5vw,50px);font-weight:500;margin:0 0 8px;letter-spacing:.01em}
+  h1 em{color:var(--gold);font-style:italic}
+  .sub{color:var(--muted);max-width:680px;margin:0 auto;font-size:16px;line-height:1.55}
+  .convene{margin:22px auto 4px;display:flex;justify-content:center}
+  .btn{background:transparent;border:1px solid var(--gold);color:var(--gold);
+    font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    padding:11px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+  .btn:hover{background:var(--gold);color:#1a1408}
+  .stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:34px;margin-top:34px;align-items:start}
+  @media(max-width:900px){.stage{grid-template-columns:1fr}}
+
+  .compass{position:relative;width:100%;aspect-ratio:1/1;border:1px solid var(--line);border-radius:3px;
+    background:linear-gradient(transparent 49.6%, rgba(201,164,76,.10) 49.6%, rgba(201,164,76,.10) 50.4%, transparent 50.4%),
+      linear-gradient(90deg, transparent 49.6%, rgba(201,164,76,.10) 49.6%, rgba(201,164,76,.10) 50.4%, transparent 50.4%),
+      radial-gradient(circle at 50% 50%, #15110a, #0d0b08 70%);}
+  .axis-label{position:absolute;font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  .axis-label.top{top:7px;left:50%;transform:translateX(-50%)}
+  .axis-label.bottom{bottom:7px;left:50%;transform:translateX(-50%)}
+  .axis-label.left{left:7px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl}
+  .axis-label.right{right:7px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl}
+  .node{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;
+    cursor:pointer;width:92px;text-align:center}
+  .chair{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+    border:1px dashed var(--ndcol,#5a513f);color:var(--ndcol,#7a705a);font-size:22px;
+    background:rgba(20,16,10,.72);transition:.3s;backdrop-filter:blur(2px)}
+  .node:hover .chair{transform:scale(1.09)}
+  .node .nm{margin-top:7px;font-size:12.5px}
+  .node .tt{font-size:9.5px;color:var(--muted);font-family:ui-monospace,Menlo,monospace;letter-spacing:.06em}
+  .node.selected .chair{border-style:solid;border-color:var(--ndcol);color:#0d0b08;background:var(--ndcol);
+    box-shadow:0 0 0 4px rgba(201,164,76,.08),0 0 34px -4px var(--ndcol)}
+  .node.active .chair{animation:pulse 1.5s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--ndcol)}50%{box-shadow:0 0 0 12px transparent}}
+
+  .panel{border:1px solid var(--line);border-radius:3px;background:linear-gradient(180deg,#14110b,#100d08);
+    min-height:540px;padding:28px 28px 30px;display:flex;flex-direction:column}
+  .panel .empty{margin:auto;text-align:center;color:var(--muted);max-width:340px;line-height:1.6}
+  .panel .empty .big{font-size:40px;color:var(--line);margin-bottom:12px}
+  .ph{display:none}.ph.show{display:flex;flex-direction:column;height:100%}
+  .ph-head{display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--line);padding-bottom:16px}
+  .ph-glyph{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:25px;
+    color:#0d0b08;background:var(--accent);flex:none}
+  .ph-name{font-size:25px;line-height:1.1;font-weight:500}
+  .ph-title{color:var(--accent);font-size:13.5px}
+  .ph-axis{font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--muted);margin-top:3px}
+  .rounds{display:flex;gap:12px;margin:18px 0 4px}
+  .rbtn{flex:1;background:transparent;border:1px solid var(--accent);color:var(--accent);
+    font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    padding:13px 12px;border-radius:2px;cursor:pointer;transition:.2s}
+  .rbtn:hover{background:var(--accent);color:#0d0b08}
+  .rbtn[disabled]{opacity:.32;cursor:default;border-color:var(--line);color:var(--muted)}
+  .rbtn.playing{background:var(--accent);color:#0d0b08}
+  .now{margin:14px 0 2px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--gold);min-height:13px}
+  .essaytitle{font-style:italic;color:var(--accent);font-size:15px;margin:2px 0 4px;min-height:0}
+  .txt{flex:1;font-size:17.5px;line-height:1.6;overflow-y:auto;padding-right:6px}
+  .txt.intro{color:var(--muted);font-style:italic}
+  .controls{display:flex;gap:10px;margin-top:14px;border-top:1px solid var(--line);padding-top:14px;align-items:center}
+  .mini{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+    background:transparent;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:2px;cursor:pointer}
+  .mini:hover{border-color:var(--accent);color:var(--accent)}
+  .seq{margin-left:auto;display:flex;gap:6px;align-items:center}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--line)}.dot.on{background:var(--accent)}
+  footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:36px;
+    font-family:ui-monospace,Menlo,monospace;letter-spacing:.1em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="kicker">A Castle · A Fire · Six Empty Chairs</div>
+    <h1>The <em>Empty Chair</em></h1>
+    <p class="sub">Six orientations drawn from tonight's conversation on the institutions a post-AGI world will demand — given a voice, and invited to the table. Pick a chair. Call Round 1 for the opening statement; Round 2 for the response.</p>
+    <div class="convene"><button class="btn" id="conveneBtn">▸ Convene the table</button></div>
+  </header>
+
+  <div class="stage">
+    <div class="compass" id="compass">
+      <div class="axis-label top">Constructivist · design it</div>
+      <div class="axis-label bottom">Emergentist · steer it</div>
+      <div class="axis-label left">Distributist · spread power</div>
+      <div class="axis-label right">Centralist · concentrate</div>
+    </div>
+
+    <div class="panel" id="panel">
+      <div class="empty" id="emptyState">
+        <div class="big">⌑</div>
+        Six voices wait at the compass.<br>Click a chair — then call <b>Round 1</b> for its opening statement, or <b>Round 2</b> for its response to the rapporteurs.
+      </div>
+      <div class="ph" id="ph">
+        <div class="ph-head">
+          <div class="ph-glyph" id="phGlyph">◈</div>
+          <div>
+            <div class="ph-name" id="phName">Name</div>
+            <div class="ph-title" id="phTitle">Title</div>
+            <div class="ph-axis" id="phAxis">axis</div>
+          </div>
+        </div>
+        <div class="rounds">
+          <button class="rbtn" id="r1btn">▶ Round 1 · Opening</button>
+          <button class="rbtn" id="r2btn">▶ Round 2 · Response</button>
+        </div>
+        <div class="now" id="phNow"></div>
+        <div class="essaytitle" id="phEssay"></div>
+        <div class="txt" id="phTxt"></div>
+        <div class="controls">
+          <button class="mini" id="stopBtn">▢ Stop</button>
+          <div class="seq"><span class="dot" id="dotIntro"></span><span class="dot" id="dotStmt"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>Round 1: authored personas · Round 2: rapporteur essays on the real transcript, randomly assigned · Voices by ElevenLabs</footer>
+</div>
+
+<audio id="audio"></audio>
+<script>
+const COLORS={solon:'--solon',agora:'--agora',prometheus:'--prometheus',gaia:'--gaia',hestia:'--hestia',delphi:'--delphi'};
+const audio=document.getElementById('audio');
+let DATA=null,current=null,phase=null,round=null;
+const cv=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+function placeNodes(){
+  const c=document.getElementById('compass');
+  DATA.personas.forEach(p=>{
+    const col=cv(COLORS[p.id]);
+    const top=(1-(p.y+1)/2)*100, screenLeft=(1-(p.x+1)/2)*100;
+    const n=document.createElement('div');
+    n.className='node'; n.id='node-'+p.id;
+    n.style.left=screenLeft+'%'; n.style.top=Math.min(top,97)+'%'; n.style.setProperty('--ndcol',col);
+    n.innerHTML=`<div class="chair">${p.glyph}</div><div class="nm">${p.name}</div><div class="tt">${p.title}</div>`;
+    n.onclick=()=>select(p);
+    c.appendChild(n);
+  });
+}
+const setNow=t=>document.getElementById('phNow').textContent=t;
+const dot=(w,on)=>document.getElementById(w).classList.toggle('on',on);
+
+function select(p){
+  current=p;
+  document.documentElement.style.setProperty('--accent',cv(COLORS[p.id]));
+  document.getElementById('emptyState').style.display='none';
+  document.getElementById('ph').classList.add('show');
+  document.getElementById('phGlyph').textContent=p.glyph;
+  document.getElementById('phName').textContent=p.name;
+  document.getElementById('phTitle').textContent=p.title;
+  document.getElementById('phAxis').textContent=p.axis;
+  document.getElementById('phEssay').textContent='';
+  document.getElementById('phTxt').textContent=''; document.getElementById('phTxt').className='txt';
+  setNow(''); dot('dotIntro',false); dot('dotStmt',false);
+  document.getElementById('r2btn').disabled=!p.round2;
+  document.querySelectorAll('.node').forEach(n=>n.classList.remove('selected','active'));
+  document.getElementById('node-'+p.id).classList.add('selected');
+  audio.pause();
+}
+const play=src=>{audio.src=src;audio.play().catch(()=>{});};
+
+function startRound(r){
+  if(!current)return;
+  round=r; phase='intro';
+  const blk=current['round'+r];
+  document.getElementById('node-'+current.id).classList.add('active');
+  document.getElementById('phEssay').textContent = (r===2 && blk.essay_title)? '“'+blk.essay_title+'”' : '';
+  setNow(r===1?'The narrator introduces…':'The narrator presents the response…');
+  dot('dotIntro',true); dot('dotStmt',false);
+  const t=document.getElementById('phTxt'); t.className='txt intro'; t.textContent=blk.intro_text;
+  play(blk.intro_audio);
+}
+function startStmt(){
+  const blk=current['round'+round]; phase='stmt';
+  setNow(round===1? current.name+' speaks':current.name+' responds');
+  dot('dotIntro',false); dot('dotStmt',true);
+  const t=document.getElementById('phTxt'); t.className='txt'; t.textContent=blk.statement_text;
+  play(blk.statement_audio);
+}
+audio.addEventListener('ended',()=>{
+  if(phase==='intro') startStmt();
+  else if(phase==='stmt'){ setNow('—'); document.querySelectorAll('.node').forEach(n=>n.classList.remove('active')); }
+  else if(phase==='opening'){ setNow(''); document.getElementById('conveneBtn').textContent='▸ Convene the table'; }
+});
+document.getElementById('r1btn').onclick=()=>startRound(1);
+document.getElementById('r2btn').onclick=()=>{ if(current && current.round2) startRound(2); };
+document.getElementById('stopBtn').onclick=()=>{audio.pause();setNow('—');document.querySelectorAll('.node').forEach(n=>n.classList.remove('active'));};
+document.getElementById('conveneBtn').onclick=()=>{phase='opening';setNow('');document.getElementById('conveneBtn').textContent='…';play(DATA.opening.audio);};
+
+fetch('personas.json').then(r=>r.json()).then(d=>{DATA=d;placeNodes();});
+</script>
+</body>
+</html>
