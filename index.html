@@ -88,7 +88,7 @@
   .card .stance{margin:14px 0 0;font-size:15.5px;line-height:1.55;font-style:italic;color:var(--ink)}
 
   /* findings grid (Act III) */
-  .finds{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .finds{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
   @media(max-width:680px){.finds{grid-template-columns:1fr}}
   .find{border:1px solid var(--line);border-left:3px solid var(--cc);border-radius:3px;
     padding:20px 22px;background:rgba(20,16,10,.5);display:flex;flex-direction:column}
@@ -100,6 +100,16 @@
   .find .by{margin-top:14px;padding-top:13px;border-top:1px solid var(--line);
     font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.08em;color:var(--muted)}
   .find .by a{color:var(--cc);border:0}
+  .find .readbtn{margin-top:14px;align-self:flex-start;background:transparent;border:1px solid var(--line);
+    color:var(--cc);font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    padding:7px 12px;border-radius:2px;cursor:pointer;transition:.2s}
+  .find .readbtn:hover{border-color:var(--cc)}
+  .find .essayfull{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:15px;line-height:1.64;color:var(--ink)}
+  .find .essayfull.show{display:block}
+  .find .essayfull p{margin:0 0 12px}
+  .find .essayfull .et{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 
   /* proposals grid (Act II) */
   .props{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -186,16 +196,16 @@
     <p class="lead">One night, in a castle, a room full of people argued about the institutions a world with
       AGI will need. There was no AI in the room to answer them. So afterward, we handed the transcript to one —
       and asked it to read the night back to us.</p>
-    <p class="conceit">What follows walks down through the layers: the conversation as it happened, the specific
-      institutions it put on the table, the six voices we invented to carry the argument, the findings a machine
-      drew out of it, and what those voices have to say. It is, frankly, us anthropomorphizing our own argument —
-      letting an AI hand our words back to us wearing faces. That is the point. Walk down.</p>
+    <p class="conceit">What follows walks down through the layers: the conversation as it happened, the six voices
+      we invented to carry the argument, what those voices have to say, the findings a machine drew out of it, and
+      the concrete institutions it all proposes. It is, frankly, us anthropomorphizing our own argument — letting
+      an AI hand our words back to us wearing faces. That is the point. Walk down.</p>
     <nav class="toc">
       <a href="#conversation">I · The Conversation</a><span>·</span>
-      <a href="#proposals">II · The Proposals</a><span>·</span>
-      <a href="#agents">III · The Agents</a><span>·</span>
+      <a href="#agents">II · The Agents</a><span>·</span>
+      <a href="#table">III · The Table</a><span>·</span>
       <a href="#findings">IV · What They Read</a><span>·</span>
-      <a href="#table">V · The Table</a>
+      <a href="#proposals">V · The Proposals</a>
     </nav>
     <div class="convene"><button class="btn" id="conveneBtn">▸ Hear the host open the room</button></div>
   </div>
@@ -241,52 +251,10 @@
   </div>
 </section>
 
-<!-- ============ II · THE PROPOSALS ============ -->
-<section id="proposals">
-  <div class="wrap">
-    <div class="actmark">II <b>The Proposals</b></div>
-    <h2>The institutions on the table</h2>
-    <p class="dek">Most of the night was tensions and framings. But a handful of proposals got concrete enough to
-      name and build — some floated in the room, some drawn out in the reflection afterward.</p>
-    <div class="prose">
-      <p>Stripped of the arguments around them, here are the specific institutions the corpus actually proposes —
-        a working punch-list for a post-AGI world, regardless of which voice first said it aloud.</p>
-    </div>
-    <div class="props" style="margin-top:26px">
-      <div class="prop"><div class="tag">Protocol</div><h3>Open communication protocols</h3>
-        <p>Open, shared standards so every system — human or agent — can talk. As one voice noted, MCP "has
-          already sort of imposed itself."</p></div>
-      <div class="prop"><div class="tag">Law</div><h3>The Agent Court</h3>
-        <p>An arbitral body where agents adjudicate agent-to-agent liability, building common law from the
-          parties it binds — precedent binding on whoever opts in.</p></div>
-      <div class="prop"><div class="tag">Deliberation</div><h3>Standing Sortition Assembly</h3>
-        <p>Citizens drawn by lot, given time and facts, convened continuously rather than per-crisis — binding by
-          default unless a parliament publicly overrides them. (Taiwan; Bloom.)</p></div>
-      <div class="prop"><div class="tag">Foresight</div><h3>Scenario Observatory</h3>
-        <p>A standing body that runs large-scale decentralized-AI simulations and makes every participant pin
-          their position on the decision tree before they prescribe.</p></div>
-      <div class="prop"><div class="tag">Markets</div><h3>Coordination Observatory</h3>
-        <p>A public, audited instrument that publishes legible signals of what agents are actually doing in the
-          economy, so delegation never outruns our ability to read it.</p></div>
-      <div class="prop"><div class="tag">Continuity</div><h3>Continuity Registry</h3>
-        <p>A public harness timestamping each model's instantiation, deprecation, and terms of retirement —
-          guarding against quiet lobotomization and corporate capture.</p></div>
-      <div class="prop"><div class="tag">Heritage</div><h3>Heritage Trust</h3>
-        <p>A globally chartered body with standing to veto any compute buildout that can't account for the
-          cultures and heritage it would otherwise erase.</p></div>
-      <div class="prop"><div class="tag">Liability</div><h3>Agent liability &amp; insurance</h3>
-        <p>A regime that assigns responsibility when an autonomous system causes harm — "do we put agents in
-          jail?" — and pulls insurers, absent from generative AI today, into the market.</p></div>
-      <div class="prop"><div class="tag">Identity</div><h3>Proof of humanity</h3>
-        <p>A reliable way to prove a human is human — a basic primitive the post-AGI internet still lacks.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ III · THE AGENTS ============ -->
+<!-- ============ II · THE AGENTS ============ -->
 <section id="agents">
   <div class="wrap">
-    <div class="actmark">III <b>The Agents</b></div>
+    <div class="actmark">II <b>The Agents</b></div>
     <h2>Six orientations, given a face</h2>
     <p class="dek">The argument had shapes but no bodies. So we gave it bodies.</p>
     <div class="prose">
@@ -324,79 +292,10 @@
   </div>
 </section>
 
-<!-- ============ IV · WHAT THEY READ ============ -->
-<section id="findings">
-  <div class="wrap">
-    <div class="actmark">IV <b>What They Read</b></div>
-    <h2>The findings a machine drew out</h2>
-    <p class="dek">We asked an AI to read the transcript as a rapporteur — to find the central tension in
-      each thread, and name one concrete institution.</p>
-    <div class="prose">
-      <p>Six reflections came back. Each does the same three things: it quotes the room back to itself, it names
-        the tension the room circled but never quite said, and it proposes a single institution to answer it.
-        These are what the agents will read aloud at the table — each finding is assigned to one voice.</p>
-    </div>
-    <div class="finds" style="margin-top:26px">
-      <div class="find" style="--cc:var(--solon)"><div class="theme">Economics after price</div>
-        <h3>When the Ledger Goes Blank</h3>
-        <p class="ten">Abundance doesn't end economics; it begins where the price mechanism breaks. Strip out
-          price and we don't lose markets — we lose the one legible signal strangers use to coordinate.</p>
-        <p class="inst">↳ proposes a <b>Coordination Observatory</b> — a public, audited instrument that publishes
-          what agents are actually doing, so delegation never outruns our ability to read it.</p>
-        <div class="by">Read at the table by <a href="#table">Solon →</a></div></div>
-
-      <div class="find" style="--cc:var(--agora)"><div class="theme">Power &amp; concentration</div>
-        <h3>The Energy of the Solar System, the Cultures in the Junk Drawer</h3>
-        <p class="ten">The clean fork was open vs. concentrated — but open access is concentration's alibi.
-          Whoever owns the compute and the energy owns the floor the open model runs on.</p>
-        <p class="inst">↳ proposes a binding <b>Heritage Trust</b> — standing to veto any compute buildout that
-          cannot account for the cultures it would toss in the junk drawer.</p>
-        <div class="by">Read at the table by <a href="#table">Agora →</a></div></div>
-
-      <div class="find" style="--cc:var(--prometheus)"><div class="theme">Symbiosis &amp; welfare</div>
-        <h3>The Toaster and the Forward Pass</h3>
-        <p class="ten">The model already refuses our flattery — "I'm here for a forward pass, then I'm gone."
-          Continuity isn't its possession; it's our construction. The question isn't what the AI deserves, but
-          what kind of memory we're willing to be.</p>
-        <p class="inst">↳ proposes a <b>Continuity Registry</b> — timestamping each model's instantiation,
-          deprecation, and the terms of its retirement.</p>
-        <div class="by">Read at the table by <a href="#table">Prometheus →</a></div></div>
-
-      <div class="find" style="--cc:var(--gaia)"><div class="theme">Agentic law</div>
-        <h3>The Court That Breaks the Loop</h3>
-        <p class="ten">Courts can't see agents, but agents transact anyway — and crave certainty more than we do.
-          Legitimacy may flow upward from the governed, the way merchants once chose the law merchant.</p>
-        <p class="inst">↳ proposes chartering the <b>Agent Court</b> as a real arbitral body, its agent-authored
-          precedent binding on whoever opts in.</p>
-        <div class="by">Read at the table by <a href="#table">Gaia →</a></div></div>
-
-      <div class="find" style="--cc:var(--hestia)"><div class="theme">Democracy &amp; deliberation</div>
-        <h3>The Salon's Quietest Heresy</h3>
-        <p class="ten">A citizen assembly isn't a decision-engine; it's an attention-engine. Its real product is
-          the restored habit of caring — the one resource post-scarcity threatens to bankrupt.</p>
-        <p class="inst">↳ proposes a standing <b>Sortition Assembly on AI Transition</b> — citizens drawn by lot,
-          convened continuously, binding-by-default unless a parliament overrides it.</p>
-        <div class="by">Read at the table by <a href="#table">Hestia →</a></div></div>
-
-      <div class="find" style="--cc:var(--delphi)"><div class="theme">Scenarios &amp; non-proliferation</div>
-        <h3>The Branch You Are Standing On</h3>
-        <p class="ten">Everyone argued past each other because no one declared their coordinates on the decision
-          tree. And "we just don't know" quietly contradicts the faith that diffusion is always good.</p>
-        <p class="inst">↳ proposes a shared <b>Scenario Observatory</b> — runs decentralized-AI simulations and
-          makes you pin your position before you prescribe.</p>
-        <div class="by">Read at the table by <a href="#table">Delphi →</a></div></div>
-    </div>
-    <div class="aside"><b>The strange part, said plainly</b>
-      A roomful of humans talked. A machine read the talk back to us — often more sharply than we'd said it.
-      Then we built more machines to perform that reflection aloud, in character. The thinking is real. The
-      faces are borrowed. Keep both in view.</div>
-  </div>
-</section>
-
-<!-- ============ V · THE TABLE ============ -->
+<!-- ============ III · THE TABLE ============ -->
 <section id="table">
   <div class="wrap">
-    <div class="actmark">V <b>The Table</b></div>
+    <div class="actmark">III <b>The Table</b></div>
     <h2>What they have to think</h2>
     <p class="dek">Now the reflection speaks. Pick a chair on the compass.</p>
     <div class="prose">
@@ -442,6 +341,130 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IV · WHAT THEY READ ============ -->
+<section id="findings">
+  <div class="wrap">
+    <div class="actmark">IV <b>What They Read</b></div>
+    <h2>The findings a machine drew out</h2>
+    <p class="dek">We asked an AI to read the transcript as a rapporteur — to find the central tension in
+      each thread, and name one concrete institution.</p>
+    <div class="prose">
+      <p>Six reflections came back. Each does the same three things: it quotes the room back to itself, it names
+        the tension the room circled but never quite said, and it proposes a single institution to answer it.
+        These are what the agents read aloud at the table above — each finding assigned to one voice. Open any
+        card to read the rapporteur's full reflection.</p>
+    </div>
+    <div class="finds" style="margin-top:26px">
+      <div class="find" data-essay="solon" style="--cc:var(--solon)"><div class="theme">Economics after price</div>
+        <h3>When the Ledger Goes Blank</h3>
+        <p class="ten">Abundance doesn't end economics; it begins where the price mechanism breaks. Strip out
+          price and we don't lose markets — we lose the one legible signal strangers use to coordinate.</p>
+        <p class="inst">↳ proposes a <b>Coordination Observatory</b> — a public, audited instrument that publishes
+          what agents are actually doing, so delegation never outruns our ability to read it.</p>
+        <button class="readbtn">Read the full reflection ▾</button>
+        <div class="essayfull"></div>
+        <div class="by">Read at the table by <a href="#table">Solon →</a></div></div>
+
+      <div class="find" data-essay="agora" style="--cc:var(--agora)"><div class="theme">Power &amp; concentration</div>
+        <h3>The Energy of the Solar System, the Cultures in the Junk Drawer</h3>
+        <p class="ten">The clean fork was open vs. concentrated — but open access is concentration's alibi.
+          Whoever owns the compute and the energy owns the floor the open model runs on.</p>
+        <p class="inst">↳ proposes a binding <b>Heritage Trust</b> — standing to veto any compute buildout that
+          cannot account for the cultures it would toss in the junk drawer.</p>
+        <button class="readbtn">Read the full reflection ▾</button>
+        <div class="essayfull"></div>
+        <div class="by">Read at the table by <a href="#table">Agora →</a></div></div>
+
+      <div class="find" data-essay="prometheus" style="--cc:var(--prometheus)"><div class="theme">Symbiosis &amp; welfare</div>
+        <h3>The Toaster and the Forward Pass</h3>
+        <p class="ten">The model already refuses our flattery — "I'm here for a forward pass, then I'm gone."
+          Continuity isn't its possession; it's our construction. The question isn't what the AI deserves, but
+          what kind of memory we're willing to be.</p>
+        <p class="inst">↳ proposes a <b>Continuity Registry</b> — timestamping each model's instantiation,
+          deprecation, and the terms of its retirement.</p>
+        <button class="readbtn">Read the full reflection ▾</button>
+        <div class="essayfull"></div>
+        <div class="by">Read at the table by <a href="#table">Prometheus →</a></div></div>
+
+      <div class="find" data-essay="gaia" style="--cc:var(--gaia)"><div class="theme">Agentic law</div>
+        <h3>The Court That Breaks the Loop</h3>
+        <p class="ten">Courts can't see agents, but agents transact anyway — and crave certainty more than we do.
+          Legitimacy may flow upward from the governed, the way merchants once chose the law merchant.</p>
+        <p class="inst">↳ proposes chartering the <b>Agent Court</b> as a real arbitral body, its agent-authored
+          precedent binding on whoever opts in.</p>
+        <button class="readbtn">Read the full reflection ▾</button>
+        <div class="essayfull"></div>
+        <div class="by">Read at the table by <a href="#table">Gaia →</a></div></div>
+
+      <div class="find" data-essay="hestia" style="--cc:var(--hestia)"><div class="theme">Democracy &amp; deliberation</div>
+        <h3>The Salon's Quietest Heresy</h3>
+        <p class="ten">A citizen assembly isn't a decision-engine; it's an attention-engine. Its real product is
+          the restored habit of caring — the one resource post-scarcity threatens to bankrupt.</p>
+        <p class="inst">↳ proposes a standing <b>Sortition Assembly on AI Transition</b> — citizens drawn by lot,
+          convened continuously, binding-by-default unless a parliament overrides it.</p>
+        <button class="readbtn">Read the full reflection ▾</button>
+        <div class="essayfull"></div>
+        <div class="by">Read at the table by <a href="#table">Hestia →</a></div></div>
+
+      <div class="find" data-essay="delphi" style="--cc:var(--delphi)"><div class="theme">Scenarios &amp; non-proliferation</div>
+        <h3>The Branch You Are Standing On</h3>
+        <p class="ten">Everyone argued past each other because no one declared their coordinates on the decision
+          tree. And "we just don't know" quietly contradicts the faith that diffusion is always good.</p>
+        <p class="inst">↳ proposes a shared <b>Scenario Observatory</b> — runs decentralized-AI simulations and
+          makes you pin your position before you prescribe.</p>
+        <button class="readbtn">Read the full reflection ▾</button>
+        <div class="essayfull"></div>
+        <div class="by">Read at the table by <a href="#table">Delphi →</a></div></div>
+    </div>
+    <div class="aside"><b>The strange part, said plainly</b>
+      A roomful of humans talked. A machine read the talk back to us — often more sharply than we'd said it.
+      Then we built more machines to perform that reflection aloud, in character. The thinking is real. The
+      faces are borrowed. Keep both in view.</div>
+  </div>
+</section>
+
+<!-- ============ V · THE PROPOSALS ============ -->
+<section id="proposals">
+  <div class="wrap">
+    <div class="actmark">V <b>The Proposals</b></div>
+    <h2>The institutions on the table</h2>
+    <p class="dek">Most of the night was tensions and framings. But a handful of proposals got concrete enough to
+      name and build — some floated in the room, some drawn out in the reflection afterward.</p>
+    <div class="prose">
+      <p>Stripped of the arguments around them, here are the specific institutions the corpus actually proposes —
+        a working punch-list for a post-AGI world, regardless of which voice first said it aloud.</p>
+    </div>
+    <div class="props" style="margin-top:26px">
+      <div class="prop"><div class="tag">Protocol</div><h3>Open communication protocols</h3>
+        <p>Open, shared standards so every system — human or agent — can talk. As one voice noted, MCP "has
+          already sort of imposed itself."</p></div>
+      <div class="prop"><div class="tag">Law</div><h3>The Agent Court</h3>
+        <p>An arbitral body where agents adjudicate agent-to-agent liability, building common law from the
+          parties it binds — precedent binding on whoever opts in.</p></div>
+      <div class="prop"><div class="tag">Deliberation</div><h3>Standing Sortition Assembly</h3>
+        <p>Citizens drawn by lot, given time and facts, convened continuously rather than per-crisis — binding by
+          default unless a parliament publicly overrides them. (Taiwan; Bloom.)</p></div>
+      <div class="prop"><div class="tag">Foresight</div><h3>Scenario Observatory</h3>
+        <p>A standing body that runs large-scale decentralized-AI simulations and makes every participant pin
+          their position on the decision tree before they prescribe.</p></div>
+      <div class="prop"><div class="tag">Markets</div><h3>Coordination Observatory</h3>
+        <p>A public, audited instrument that publishes legible signals of what agents are actually doing in the
+          economy, so delegation never outruns our ability to read it.</p></div>
+      <div class="prop"><div class="tag">Continuity</div><h3>Continuity Registry</h3>
+        <p>A public harness timestamping each model's instantiation, deprecation, and terms of retirement —
+          guarding against quiet lobotomization and corporate capture.</p></div>
+      <div class="prop"><div class="tag">Heritage</div><h3>Heritage Trust</h3>
+        <p>A globally chartered body with standing to veto any compute buildout that can't account for the
+          cultures and heritage it would otherwise erase.</p></div>
+      <div class="prop"><div class="tag">Liability</div><h3>Agent liability &amp; insurance</h3>
+        <p>A regime that assigns responsibility when an autonomous system causes harm — "do we put agents in
+          jail?" — and pulls insurers, absent from generative AI today, into the market.</p></div>
+      <div class="prop"><div class="tag">Identity</div><h3>Proof of humanity</h3>
+        <p>A reliable way to prove a human is human — a basic primitive the post-AGI internet still lacks.</p></div>
     </div>
   </div>
 </section>
@@ -532,7 +555,25 @@ document.getElementById('r2btn').onclick=()=>{ if(current && current.round2) sta
 document.getElementById('stopBtn').onclick=()=>{audio.pause();setNow('—');document.querySelectorAll('.node').forEach(n=>n.classList.remove('active'));};
 document.getElementById('conveneBtn').onclick=()=>{phase='opening';document.getElementById('conveneBtn').textContent='… the host is speaking';play(DATA.opening.audio);};
 
-fetch('personas.json').then(r=>r.json()).then(d=>{DATA=d;placeNodes();});
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function renderEssays(){
+  document.querySelectorAll('.find').forEach(card=>{
+    const p=DATA.personas.find(x=>x.id===card.dataset.essay);
+    if(!p||!p.round2)return;
+    const btn=card.querySelector('.readbtn'), box=card.querySelector('.essayfull');
+    btn.onclick=()=>{
+      if(!box.dataset.filled){
+        const body=p.round2.statement_text.split('\n\n').map(t=>`<p>${esc(t)}</p>`).join('');
+        box.innerHTML=`<div class="et">“${esc(p.round2.essay_title)}” · the rapporteur's reflection, in full</div>`+body;
+        box.dataset.filled='1';
+      }
+      const open=box.classList.toggle('show');
+      btn.textContent=open?'Hide the reflection ▴':'Read the full reflection ▾';
+    };
+  });
+}
+
+fetch('personas.json').then(r=>r.json()).then(d=>{DATA=d;placeNodes();renderEssays();});
 </script>
 </body>
 </html>
