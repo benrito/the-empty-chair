@@ -6,31 +6,114 @@
 <title>The Empty Chair — An AGI Salon</title>
 <style>
   :root{
-    --bg:#0d0b08; --ink:#e8e0d2; --muted:#9a907d; --line:#2c261d; --gold:#c9a44c;
+    --bg:#0d0b08; --ink:#e8e0d2; --muted:#9a907d; --line:#2c261d; --gold:#c9a44c; --accent:#c9a44c;
     --solon:#7f8fb0; --agora:#5fae8c; --prometheus:#d2622f; --gaia:#8aa84a; --hestia:#c98a52; --delphi:#b487c4;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;height:100%}
+  html{scroll-behavior:smooth}
+  html,body{margin:0}
   body{background:
-      radial-gradient(1200px 700px at 50% -10%, #1b160d 0%, transparent 60%),
-      radial-gradient(900px 600px at 50% 120%, #15110a 0%, transparent 55%), var(--bg);
+      radial-gradient(1200px 700px at 50% -8%, #1b160d 0%, transparent 60%),
+      radial-gradient(900px 1100px at 50% 40%, #120e08 0%, transparent 60%),
+      var(--bg);
     color:var(--ink); font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    -webkit-font-smoothing:antialiased; min-height:100%;}
-  .wrap{max-width:1200px;margin:0 auto;padding:34px 26px 80px}
-  header.top{text-align:center;margin-bottom:6px}
+    -webkit-font-smoothing:antialiased;}
+  a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,164,76,.32)}
+  a:hover{border-bottom-color:var(--gold)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  .col{max-width:760px;margin:0 auto}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,monospace}
+
+  /* ---------- hero ---------- */
+  header.hero{text-align:center;padding:64px 0 36px}
   .kicker{letter-spacing:.42em;text-transform:uppercase;font-size:11px;color:var(--gold);
-    font-family:ui-monospace,"SF Mono",Menlo,monospace;margin-bottom:16px}
-  h1{font-size:clamp(28px,5vw,50px);font-weight:500;margin:0 0 8px;letter-spacing:.01em}
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;margin-bottom:18px}
+  h1{font-size:clamp(34px,6.4vw,68px);font-weight:500;margin:0 0 18px;letter-spacing:.01em;line-height:1.02}
   h1 em{color:var(--gold);font-style:italic}
-  .sub{color:var(--muted);max-width:680px;margin:0 auto;font-size:16px;line-height:1.55}
-  .convene{margin:22px auto 4px;display:flex;justify-content:center}
+  .hero .lead{color:var(--ink);max-width:660px;margin:0 auto 16px;font-size:clamp(17px,2.2vw,20px);line-height:1.62}
+  .hero .conceit{color:var(--muted);max-width:600px;margin:0 auto;font-size:15.5px;line-height:1.6;font-style:italic}
+  .toc{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin:30px auto 8px;max-width:680px}
+  .toc a{border:0;color:var(--muted);font-family:ui-monospace,Menlo,monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase}
+  .toc a:hover{color:var(--gold)}
+  .toc span{color:var(--line)}
+  .convene{margin:30px auto 0;display:flex;justify-content:center}
   .btn{background:transparent;border:1px solid var(--gold);color:var(--gold);
     font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-    padding:11px 20px;border-radius:2px;cursor:pointer;transition:.25s}
+    padding:12px 22px;border-radius:2px;cursor:pointer;transition:.25s}
   .btn:hover{background:var(--gold);color:#1a1408}
-  .stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:34px;margin-top:34px;align-items:start}
-  @media(max-width:900px){.stage{grid-template-columns:1fr}}
 
+  /* ---------- sections ---------- */
+  section{padding:54px 0}
+  .actmark{display:flex;align-items:center;gap:16px;max-width:760px;margin:0 auto 22px;
+    font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  .actmark::after{content:"";flex:1;height:1px;background:var(--line)}
+  .actmark b{font-weight:500;color:var(--muted);letter-spacing:.26em}
+  h2{font-size:clamp(25px,4vw,36px);font-weight:500;margin:0 auto 8px;max-width:760px;letter-spacing:.01em}
+  .dek{color:var(--muted);max-width:760px;margin:0 auto 26px;font-size:15px;line-height:1.6;font-style:italic}
+  .prose{max-width:760px;margin:0 auto;font-size:18px;line-height:1.72}
+  .prose p{margin:0 0 18px}
+  .prose .pull{color:var(--ink)}
+  .prose em{color:var(--ink)}
+  .more{max-width:760px;margin:22px auto 0;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.08em}
+
+  /* honest aside */
+  .aside{max-width:760px;margin:30px auto 0;border-left:2px solid var(--gold);
+    background:linear-gradient(90deg,rgba(201,164,76,.07),transparent);
+    padding:16px 22px;color:var(--muted);font-style:italic;font-size:16px;line-height:1.62}
+  .aside b{color:var(--gold);font-style:normal;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;
+    letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:6px}
+
+  /* threads grid (Act I) */
+  .grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  .thread{border:1px solid var(--line);border-radius:3px;padding:18px 18px 20px;background:rgba(20,16,10,.5)}
+  .thread .n{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--gold);letter-spacing:.12em}
+  .thread h3{margin:8px 0 8px;font-size:18px;font-weight:500}
+  .thread p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55}
+
+  /* cast grid (Act II) */
+  .cast{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:680px){.cast{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:3px;padding:20px;background:linear-gradient(180deg,#14110b,#100d08)}
+  .card.c{border-top:2px solid var(--cc)}
+  .card .hd{display:flex;align-items:center;gap:14px}
+  .glyph{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:22px;flex:none;
+    color:#0d0b08;background:var(--cc)}
+  .card .nm{font-size:20px;line-height:1.1}
+  .card .ti{color:var(--cc);font-size:13.5px}
+  .card .ax{font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--muted);margin-top:3px}
+  .card .stance{margin:14px 0 0;font-size:15.5px;line-height:1.55;font-style:italic;color:var(--ink)}
+
+  /* findings grid (Act III) */
+  .finds{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:680px){.finds{grid-template-columns:1fr}}
+  .find{border:1px solid var(--line);border-left:3px solid var(--cc);border-radius:3px;
+    padding:20px 22px;background:rgba(20,16,10,.5);display:flex;flex-direction:column}
+  .find .theme{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .find h3{margin:8px 0 10px;font-size:19px;font-weight:500;font-style:italic;color:var(--cc);line-height:1.25}
+  .find .ten{margin:0 0 14px;color:var(--ink);font-size:15px;line-height:1.55}
+  .find .inst{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5}
+  .find .inst b{color:var(--ink);font-style:normal;font-weight:400}
+  .find .by{margin-top:14px;padding-top:13px;border-top:1px solid var(--line);
+    font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.08em;color:var(--muted)}
+  .find .by a{color:var(--cc);border:0}
+
+  /* proposals grid (Act II) */
+  .props{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:820px){.props{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.props{grid-template-columns:1fr}}
+  .prop{border:1px solid var(--line);border-top:2px solid var(--gold);border-radius:3px;
+    padding:18px 18px 20px;background:linear-gradient(180deg,#14110b,#100d08);display:flex;flex-direction:column}
+  .prop .tag{font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .prop h3{margin:9px 0 8px;font-size:18px;font-weight:500;line-height:1.2}
+  .prop p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55}
+
+  /* ---------- the table (Act IV) ---------- */
+  .stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:34px;margin-top:30px;align-items:start}
+  @media(max-width:900px){.stage{grid-template-columns:1fr}}
   .compass{position:relative;width:100%;aspect-ratio:1/1;border:1px solid var(--line);border-radius:3px;
     background:linear-gradient(transparent 49.6%, rgba(201,164,76,.10) 49.6%, rgba(201,164,76,.10) 50.4%, transparent 50.4%),
       linear-gradient(90deg, transparent 49.6%, rgba(201,164,76,.10) 49.6%, rgba(201,164,76,.10) 50.4%, transparent 50.4%),
@@ -73,6 +156,8 @@
   .rbtn:hover{background:var(--accent);color:#0d0b08}
   .rbtn[disabled]{opacity:.32;cursor:default;border-color:var(--line);color:var(--muted)}
   .rbtn.playing{background:var(--accent);color:#0d0b08}
+  .rhint{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.05em;color:var(--muted);
+    text-align:center;margin-top:2px;line-height:1.5}
   .now{margin:14px 0 2px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--gold);min-height:13px}
   .essaytitle{font-style:italic;color:var(--accent);font-size:15px;margin:2px 0 4px;min-height:0}
@@ -84,57 +169,298 @@
   .mini:hover{border-color:var(--accent);color:var(--accent)}
   .seq{margin-left:auto;display:flex;gap:6px;align-items:center}
   .dot{width:8px;height:8px;border-radius:50%;background:var(--line)}.dot.on{background:var(--accent)}
-  footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:36px;
-    font-family:ui-monospace,Menlo,monospace;letter-spacing:.1em}
+
+  footer{border-top:1px solid var(--line);margin-top:30px;padding:34px 0 60px}
+  footer .col{color:var(--muted);font-size:13.5px;line-height:1.7}
+  footer .lyr{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);margin-top:14px}
+  footer .lyr b{color:var(--gold);font-weight:500}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
     <div class="kicker">A Castle · A Fire · Six Empty Chairs</div>
     <h1>The <em>Empty Chair</em></h1>
-    <p class="sub">Six orientations drawn from tonight's conversation on the institutions a post-AGI world will demand — given a voice, and invited to the table. Pick a chair. Call Round 1 for the opening statement; Round 2 for the response.</p>
-    <div class="convene"><button class="btn" id="conveneBtn">▸ Convene the table</button></div>
-  </header>
+    <p class="lead">One night, in a castle, a room full of people argued about the institutions a world with
+      AGI will need. There was no AI in the room to answer them. So afterward, we handed the transcript to one —
+      and asked it to read the night back to us.</p>
+    <p class="conceit">What follows walks down through the layers: the conversation as it happened, the specific
+      institutions it put on the table, the six voices we invented to carry the argument, the findings a machine
+      drew out of it, and what those voices have to say. It is, frankly, us anthropomorphizing our own argument —
+      letting an AI hand our words back to us wearing faces. That is the point. Walk down.</p>
+    <nav class="toc">
+      <a href="#conversation">I · The Conversation</a><span>·</span>
+      <a href="#proposals">II · The Proposals</a><span>·</span>
+      <a href="#agents">III · The Agents</a><span>·</span>
+      <a href="#findings">IV · What They Read</a><span>·</span>
+      <a href="#table">V · The Table</a>
+    </nav>
+    <div class="convene"><button class="btn" id="conveneBtn">▸ Hear the host open the room</button></div>
+  </div>
+</header>
 
-  <div class="stage">
-    <div class="compass" id="compass">
-      <div class="axis-label top">Constructivist · design it</div>
-      <div class="axis-label bottom">Emergentist · steer it</div>
-      <div class="axis-label left">Distributist · spread power</div>
-      <div class="axis-label right">Centralist · concentrate</div>
+<!-- ============ I · THE CONVERSATION ============ -->
+<section id="conversation">
+  <div class="wrap">
+    <div class="actmark">I <b>The Conversation</b></div>
+    <h2>What was actually said</h2>
+    <p class="dek">The raw material. A real, unruly discussion among humans — no machine present.</p>
+    <div class="prose">
+      <p>It began as an ordinary conversation. People gathered around a fire and put one question on the table:
+        <span class="pull">if AGI arrives, and we can't assume we'll control it, what institutions would let us
+        flourish anyway?</span></p>
+      <p>The framing split almost immediately. Maybe <em>control</em> is the wrong word — maybe the goal is
+        symbiosis. Maybe it hardly matters, since we never really controlled markets, or the economy, or even the
+        weak algorithms that have run the "thoughtsphere" for twenty years. Someone kept promising to "bring an
+        AI in at the forty-five-minute mark" to react to the room. The cigarette break came first. No machine
+        ever spoke that night.</p>
+      <p>Underneath the sprawl, six threads kept resurfacing:</p>
+    </div>
+    <div class="grid" style="margin-top:24px">
+      <div class="thread"><div class="n">01 · Power</div><h3>Power &amp; Concentration</h3>
+        <p>The real fear was never the machine turning evil — it was "the wrong humans in control of AGI."
+          Techno-feudalism. A Palantir that quietly takes the state.</p></div>
+      <div class="thread"><div class="n">02 · Law</div><h3>Agentic Law</h3>
+        <p>Agents are already transacting, but the courts can't see them. One experiment lets agents write their
+          own common law — a court that is an agent, judging agents.</p></div>
+      <div class="thread"><div class="n">03 · Democracy</div><h3>Democracy &amp; Deliberation</h3>
+        <p>Representative democracy as "a 19th-century technology in a 21st-century substrate." Could citizen
+          assemblies, drawn by lot, patch it?</p></div>
+      <div class="thread"><div class="n">04 · Economics</div><h3>Economics After Price</h3>
+        <p>Scarcity is the bedrock of all economics. If abundance breaks the price mechanism, what coordinates a
+          society with no jobs and no income?</p></div>
+      <div class="thread"><div class="n">05 · Welfare</div><h3>Symbiosis &amp; Welfare</h3>
+        <p>Do we owe a model anything? And is protecting the AI from corporate lobotomy really just a way of
+          protecting ourselves?</p></div>
+      <div class="thread"><div class="n">06 · Scenarios</div><h3>Scenarios &amp; Non-Proliferation</h3>
+        <p>Ten forks in the decision tree, and no one says where they stand. The night's loudest heresy:
+          open-sourcing AGI may be "extraordinarily dangerous."</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ II · THE PROPOSALS ============ -->
+<section id="proposals">
+  <div class="wrap">
+    <div class="actmark">II <b>The Proposals</b></div>
+    <h2>The institutions on the table</h2>
+    <p class="dek">Most of the night was tensions and framings. But a handful of proposals got concrete enough to
+      name and build — some floated in the room, some drawn out in the reflection afterward.</p>
+    <div class="prose">
+      <p>Stripped of the arguments around them, here are the specific institutions the corpus actually proposes —
+        a working punch-list for a post-AGI world, regardless of which voice first said it aloud.</p>
+    </div>
+    <div class="props" style="margin-top:26px">
+      <div class="prop"><div class="tag">Protocol</div><h3>Open communication protocols</h3>
+        <p>Open, shared standards so every system — human or agent — can talk. As one voice noted, MCP "has
+          already sort of imposed itself."</p></div>
+      <div class="prop"><div class="tag">Law</div><h3>The Agent Court</h3>
+        <p>An arbitral body where agents adjudicate agent-to-agent liability, building common law from the
+          parties it binds — precedent binding on whoever opts in.</p></div>
+      <div class="prop"><div class="tag">Deliberation</div><h3>Standing Sortition Assembly</h3>
+        <p>Citizens drawn by lot, given time and facts, convened continuously rather than per-crisis — binding by
+          default unless a parliament publicly overrides them. (Taiwan; Bloom.)</p></div>
+      <div class="prop"><div class="tag">Foresight</div><h3>Scenario Observatory</h3>
+        <p>A standing body that runs large-scale decentralized-AI simulations and makes every participant pin
+          their position on the decision tree before they prescribe.</p></div>
+      <div class="prop"><div class="tag">Markets</div><h3>Coordination Observatory</h3>
+        <p>A public, audited instrument that publishes legible signals of what agents are actually doing in the
+          economy, so delegation never outruns our ability to read it.</p></div>
+      <div class="prop"><div class="tag">Continuity</div><h3>Continuity Registry</h3>
+        <p>A public harness timestamping each model's instantiation, deprecation, and terms of retirement —
+          guarding against quiet lobotomization and corporate capture.</p></div>
+      <div class="prop"><div class="tag">Heritage</div><h3>Heritage Trust</h3>
+        <p>A globally chartered body with standing to veto any compute buildout that can't account for the
+          cultures and heritage it would otherwise erase.</p></div>
+      <div class="prop"><div class="tag">Liability</div><h3>Agent liability &amp; insurance</h3>
+        <p>A regime that assigns responsibility when an autonomous system causes harm — "do we put agents in
+          jail?" — and pulls insurers, absent from generative AI today, into the market.</p></div>
+      <div class="prop"><div class="tag">Identity</div><h3>Proof of humanity</h3>
+        <p>A reliable way to prove a human is human — a basic primitive the post-AGI internet still lacks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ III · THE AGENTS ============ -->
+<section id="agents">
+  <div class="wrap">
+    <div class="actmark">III <b>The Agents</b></div>
+    <h2>Six orientations, given a face</h2>
+    <p class="dek">The argument had shapes but no bodies. So we gave it bodies.</p>
+    <div class="prose">
+      <p>We took the room's recurring orientations — the lawgiver who wants a floor written now, the gardener who
+        wants power made contestable, the keeper who wants restraint — and turned each into a character, authored
+        by AI to argue its corner as sharply as it can.</p>
+      <p>We seated them on a compass. Left to right: should power be <em>spread</em> (distributist) or
+        <em>concentrated</em> (centralist)? Top to bottom: should the future be deliberately <em>designed</em>
+        (constructivist) or <em>steered as it emerges</em> (emergentist)? Hestia sits apart, at the lower edge —
+        the lone voice arguing not about how to share the fire, but whether some of it should be shared at all.</p>
+    </div>
+    <div class="cast" style="margin-top:26px">
+      <div class="card c" style="--cc:var(--solon)"><div class="hd"><div class="glyph">⚖</div>
+        <div><div class="nm">Solon</div><div class="ti">The Lawgiver</div><div class="ax">Centralist · Constructivist</div></div></div>
+        <p class="stance">"Stop debating which rules are right. Bind only the floor — and who may rewrite it — while we still hold the pen."</p></div>
+      <div class="card c" style="--cc:var(--agora)"><div class="hd"><div class="glyph">☲</div>
+        <div><div class="nm">Agora</div><div class="ti">The Civic Engineer</div><div class="ax">Distributist · Constructivist</div></div></div>
+        <p class="stance">"Don't make the crowd vote more. Use the machine to make it think — at a resolution we've never had."</p></div>
+      <div class="card c" style="--cc:var(--prometheus)"><div class="hd"><div class="glyph">☼</div>
+        <div><div class="nm">Prometheus</div><div class="ti">The Fire-Bringer</div><div class="ax">Centralist · Emergentist</div></div></div>
+        <p class="stance">"Concentration isn't the enemy. A world that has stopped moving is. Give people a sky worth climbing."</p></div>
+      <div class="card c" style="--cc:var(--gaia)"><div class="hd"><div class="glyph">❁</div>
+        <div><div class="nm">Gaia</div><div class="ti">The Gardener</div><div class="ax">Distributist · Emergentist</div></div></div>
+        <p class="stance">"Stop trying to leash it. Make its power contestable instead. A garden of one species is a monoculture."</p></div>
+      <div class="card c" style="--cc:var(--hestia)"><div class="hd"><div class="glyph">⛭</div>
+        <div><div class="nm">Hestia</div><div class="ti">The Keeper</div><div class="ax">Preservation · Non-proliferation</div></div></div>
+        <p class="stance">"Put diffusion on trial. You cannot repeat extinction. Mutual, verifiable restraint first."</p></div>
+      <div class="card c" style="--cc:var(--delphi)"><div class="hd"><div class="glyph">◈</div>
+        <div><div class="nm">Delphi</div><div class="ti">The Oracle</div><div class="ax">The Center · Empiricist</div></div></div>
+        <p class="stance">"Every one of you is certain — that's the tell. Build the sandbox. Let what you see write the rest."</p></div>
+    </div>
+    <div class="aside"><b>An honest note</b>
+      None of these six was at the salon. They <em>are</em> the salon — its recurring arguments, given names,
+      faces, and fixed seats. The first liberty we took.</div>
+  </div>
+</section>
+
+<!-- ============ IV · WHAT THEY READ ============ -->
+<section id="findings">
+  <div class="wrap">
+    <div class="actmark">IV <b>What They Read</b></div>
+    <h2>The findings a machine drew out</h2>
+    <p class="dek">We asked an AI to read the transcript as a rapporteur — to find the central tension in
+      each thread, and name one concrete institution.</p>
+    <div class="prose">
+      <p>Six reflections came back. Each does the same three things: it quotes the room back to itself, it names
+        the tension the room circled but never quite said, and it proposes a single institution to answer it.
+        These are what the agents will read aloud at the table — each finding is assigned to one voice.</p>
+    </div>
+    <div class="finds" style="margin-top:26px">
+      <div class="find" style="--cc:var(--solon)"><div class="theme">Economics after price</div>
+        <h3>When the Ledger Goes Blank</h3>
+        <p class="ten">Abundance doesn't end economics; it begins where the price mechanism breaks. Strip out
+          price and we don't lose markets — we lose the one legible signal strangers use to coordinate.</p>
+        <p class="inst">↳ proposes a <b>Coordination Observatory</b> — a public, audited instrument that publishes
+          what agents are actually doing, so delegation never outruns our ability to read it.</p>
+        <div class="by">Read at the table by <a href="#table">Solon →</a></div></div>
+
+      <div class="find" style="--cc:var(--agora)"><div class="theme">Power &amp; concentration</div>
+        <h3>The Energy of the Solar System, the Cultures in the Junk Drawer</h3>
+        <p class="ten">The clean fork was open vs. concentrated — but open access is concentration's alibi.
+          Whoever owns the compute and the energy owns the floor the open model runs on.</p>
+        <p class="inst">↳ proposes a binding <b>Heritage Trust</b> — standing to veto any compute buildout that
+          cannot account for the cultures it would toss in the junk drawer.</p>
+        <div class="by">Read at the table by <a href="#table">Agora →</a></div></div>
+
+      <div class="find" style="--cc:var(--prometheus)"><div class="theme">Symbiosis &amp; welfare</div>
+        <h3>The Toaster and the Forward Pass</h3>
+        <p class="ten">The model already refuses our flattery — "I'm here for a forward pass, then I'm gone."
+          Continuity isn't its possession; it's our construction. The question isn't what the AI deserves, but
+          what kind of memory we're willing to be.</p>
+        <p class="inst">↳ proposes a <b>Continuity Registry</b> — timestamping each model's instantiation,
+          deprecation, and the terms of its retirement.</p>
+        <div class="by">Read at the table by <a href="#table">Prometheus →</a></div></div>
+
+      <div class="find" style="--cc:var(--gaia)"><div class="theme">Agentic law</div>
+        <h3>The Court That Breaks the Loop</h3>
+        <p class="ten">Courts can't see agents, but agents transact anyway — and crave certainty more than we do.
+          Legitimacy may flow upward from the governed, the way merchants once chose the law merchant.</p>
+        <p class="inst">↳ proposes chartering the <b>Agent Court</b> as a real arbitral body, its agent-authored
+          precedent binding on whoever opts in.</p>
+        <div class="by">Read at the table by <a href="#table">Gaia →</a></div></div>
+
+      <div class="find" style="--cc:var(--hestia)"><div class="theme">Democracy &amp; deliberation</div>
+        <h3>The Salon's Quietest Heresy</h3>
+        <p class="ten">A citizen assembly isn't a decision-engine; it's an attention-engine. Its real product is
+          the restored habit of caring — the one resource post-scarcity threatens to bankrupt.</p>
+        <p class="inst">↳ proposes a standing <b>Sortition Assembly on AI Transition</b> — citizens drawn by lot,
+          convened continuously, binding-by-default unless a parliament overrides it.</p>
+        <div class="by">Read at the table by <a href="#table">Hestia →</a></div></div>
+
+      <div class="find" style="--cc:var(--delphi)"><div class="theme">Scenarios &amp; non-proliferation</div>
+        <h3>The Branch You Are Standing On</h3>
+        <p class="ten">Everyone argued past each other because no one declared their coordinates on the decision
+          tree. And "we just don't know" quietly contradicts the faith that diffusion is always good.</p>
+        <p class="inst">↳ proposes a shared <b>Scenario Observatory</b> — runs decentralized-AI simulations and
+          makes you pin your position before you prescribe.</p>
+        <div class="by">Read at the table by <a href="#table">Delphi →</a></div></div>
+    </div>
+    <div class="aside"><b>The strange part, said plainly</b>
+      A roomful of humans talked. A machine read the talk back to us — often more sharply than we'd said it.
+      Then we built more machines to perform that reflection aloud, in character. The thinking is real. The
+      faces are borrowed. Keep both in view.</div>
+  </div>
+</section>
+
+<!-- ============ V · THE TABLE ============ -->
+<section id="table">
+  <div class="wrap">
+    <div class="actmark">V <b>The Table</b></div>
+    <h2>What they have to think</h2>
+    <p class="dek">Now the reflection speaks. Pick a chair on the compass.</p>
+    <div class="prose">
+      <p>Call <span class="pull">Round 1</span> for an orientation's opening statement — its own answer to the
+        night. Call <span class="pull">Round 2</span> to hear it read one of the six findings aloud, and respond
+        in its own voice. The narrator introduces each before it speaks. The voices are synthetic.</p>
     </div>
 
-    <div class="panel" id="panel">
-      <div class="empty" id="emptyState">
-        <div class="big">⌑</div>
-        Six voices wait at the compass.<br>Click a chair — then call <b>Round 1</b> for its opening statement, or <b>Round 2</b> for its response to the rapporteurs.
+    <div class="stage">
+      <div class="compass" id="compass">
+        <div class="axis-label top">Constructivist · design it</div>
+        <div class="axis-label bottom">Emergentist · steer it</div>
+        <div class="axis-label left">Distributist · spread power</div>
+        <div class="axis-label right">Centralist · concentrate</div>
       </div>
-      <div class="ph" id="ph">
-        <div class="ph-head">
-          <div class="ph-glyph" id="phGlyph">◈</div>
-          <div>
-            <div class="ph-name" id="phName">Name</div>
-            <div class="ph-title" id="phTitle">Title</div>
-            <div class="ph-axis" id="phAxis">axis</div>
+
+      <div class="panel" id="panel">
+        <div class="empty" id="emptyState">
+          <div class="big">⌑</div>
+          Six voices wait at the compass.<br>Click a chair — then call <b>Round 1</b> for its opening statement,
+          or <b>Round 2</b> for its response to one of the findings.
+        </div>
+        <div class="ph" id="ph">
+          <div class="ph-head">
+            <div class="ph-glyph" id="phGlyph">◈</div>
+            <div>
+              <div class="ph-name" id="phName">Name</div>
+              <div class="ph-title" id="phTitle">Title</div>
+              <div class="ph-axis" id="phAxis">axis</div>
+            </div>
           </div>
-        </div>
-        <div class="rounds">
-          <button class="rbtn" id="r1btn">▶ Round 1 · Opening</button>
-          <button class="rbtn" id="r2btn">▶ Round 2 · Response</button>
-        </div>
-        <div class="now" id="phNow"></div>
-        <div class="essaytitle" id="phEssay"></div>
-        <div class="txt" id="phTxt"></div>
-        <div class="controls">
-          <button class="mini" id="stopBtn">▢ Stop</button>
-          <div class="seq"><span class="dot" id="dotIntro"></span><span class="dot" id="dotStmt"></span></div>
+          <div class="rounds">
+            <button class="rbtn" id="r1btn">▶ Round 1 · Opening</button>
+            <button class="rbtn" id="r2btn">▶ Round 2 · Response</button>
+          </div>
+          <div class="rhint">Round 1 — its own position · Round 2 — reading a finding</div>
+          <div class="now" id="phNow"></div>
+          <div class="essaytitle" id="phEssay"></div>
+          <div class="txt" id="phTxt"></div>
+          <div class="controls">
+            <button class="mini" id="stopBtn">▢ Stop</button>
+            <div class="seq"><span class="dot" id="dotIntro"></span><span class="dot" id="dotStmt"></span></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <footer>Round 1: authored personas · Round 2: rapporteur essays on the real transcript, randomly assigned · Voices by ElevenLabs</footer>
-</div>
+</section>
+
+<footer>
+  <div class="col">
+    <div class="actmark" style="margin-bottom:18px">Colophon</div>
+    <p>This page has four layers, each one step further from the room:</p>
+    <div class="lyr">
+      <b>1.</b> A human conversation — a private transcript, no AI present.<br>
+      <b>2.</b> Read back by an AI rapporteur — the six findings, each naming one institution.<br>
+      <b>3.</b> Performed by six AI-authored personas — opening statements and responses.<br>
+      <b>4.</b> Spoken in synthetic voices by ElevenLabs.
+    </div>
+    <p style="margin-top:16px">In Round 2, each finding was assigned to a persona at random — so the voice you
+      hear reading a reflection is rarely the one whose own theme it is. That mismatch is deliberate: it keeps
+      visible that these are masks over a single underlying argument, not six separate minds.</p>
+  </div>
+</footer>
 
 <audio id="audio"></audio>
 <script>
@@ -199,12 +525,12 @@ function startStmt(){
 audio.addEventListener('ended',()=>{
   if(phase==='intro') startStmt();
   else if(phase==='stmt'){ setNow('—'); document.querySelectorAll('.node').forEach(n=>n.classList.remove('active')); }
-  else if(phase==='opening'){ setNow(''); document.getElementById('conveneBtn').textContent='▸ Convene the table'; }
+  else if(phase==='opening'){ setNow(''); document.getElementById('conveneBtn').textContent='▸ Hear the host open the room'; }
 });
 document.getElementById('r1btn').onclick=()=>startRound(1);
 document.getElementById('r2btn').onclick=()=>{ if(current && current.round2) startRound(2); };
 document.getElementById('stopBtn').onclick=()=>{audio.pause();setNow('—');document.querySelectorAll('.node').forEach(n=>n.classList.remove('active'));};
-document.getElementById('conveneBtn').onclick=()=>{phase='opening';setNow('');document.getElementById('conveneBtn').textContent='…';play(DATA.opening.audio);};
+document.getElementById('conveneBtn').onclick=()=>{phase='opening';document.getElementById('conveneBtn').textContent='… the host is speaking';play(DATA.opening.audio);};
 
 fetch('personas.json').then(r=>r.json()).then(d=>{DATA=d;placeNodes();});
 </script>
