@@ -1,15 +1,22 @@
-# The Empty Chair — An AGI Salon
+# So We Asked the AI
 
-Six political orientations, drawn from a castle-salon conversation on the institutions a
-post-AGI world will need, given a voice and invited to the table.
+*A post-AGI salon, played back by a machine.*
 
-- **Round 1** — the narrator introduces each persona, who then delivers an authored opening statement.
-- **Round 2** — the narrator presents a rapporteur essay (a reflection on the real discussion,
-  randomly assigned), which the persona reads as its response.
+A roomful of people spent an evening arguing about the institutions a world with AGI will
+need. No AI was in the room. Afterward, we fed the transcript to one and let it answer back —
+as six voices, each a political orientation drawn from the conversation. The AI is a mirror;
+the people in the room are the point.
 
-The six voices, mapped onto a compass of *centralist ↔ distributist* and *constructivist ↔ emergentist*:
-**Solon** (the Lawgiver), **Agora** (the Civic Engineer), **Prometheus** (the Fire-Bringer),
-**Gaia** (the Gardener), **Hestia** (the Keeper — preservation / non-proliferation), and
-**Delphi** (the Oracle).
+The page walks through it in order:
 
-Narration generated with OpenAI `gpt-4o-mini-tts`. A static site — open `index.html`.
+1. **The Conversation** — what was actually said.
+2. **What They Read** — six rapporteur findings an AI drew out of the transcript, each naming one institution.
+3. **The AI Weighs In** — the six voices on a compass (*centralist ↔ distributist*, *constructivist ↔ emergentist*); pick a chair to hear an opening statement (Round 1) or a reading of one finding (Round 2).
+4. **The Proposals** — the concrete institutions, consolidated.
+5. **Addendum** — a cleaned-up transcript of the source event.
+
+The six: **Solon** (the Lawgiver), **Agora** (the Civic Engineer), **Prometheus** (the
+Fire-Bringer), **Gaia** (the Gardener), **Hestia** (the Keeper), **Delphi** (the Oracle).
+
+Voices by ElevenLabs. A static site — open `index.html` (serve over HTTP so the compass can
+fetch `personas.json`).

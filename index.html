@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Empty Chair — An AGI Salon</title>
+<title>So We Asked the AI — a post-AGI salon, played back</title>
 <style>
   :root{
     --bg:#0d0b08; --ink:#e8e0d2; --muted:#9a907d; --line:#2c261d; --gold:#c9a44c; --accent:#c9a44c;
@@ -184,6 +184,18 @@
   footer .col{color:var(--muted);font-size:13.5px;line-height:1.7}
   footer .lyr{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.04em;color:var(--muted);margin-top:14px}
   footer .lyr b{color:var(--gold);font-weight:500}
+
+  /* transcript addendum */
+  .transcript-note{max-width:760px;margin:0 auto 18px;color:var(--muted);font-size:13.5px;line-height:1.6;font-style:italic}
+  .tx{max-width:820px;margin:0 auto;border:1px solid var(--line);border-radius:3px;background:rgba(20,16,10,.4)}
+  .tx>summary{cursor:pointer;padding:16px 24px;font-family:ui-monospace,Menlo,monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--gold);list-style:none}
+  .tx>summary::-webkit-details-marker{display:none}
+  .tx>summary::before{content:"▸  "}
+  .tx[open]>summary::before{content:"▾  "}
+  .tx[open]>summary{border-bottom:1px solid var(--line)}
+  .txbody{padding:8px 26px 26px}
+  .txbody p{font-size:15.5px;line-height:1.66;color:var(--ink);margin:18px 0}
 </style>
 </head>
 <body>
@@ -191,23 +203,21 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="wrap">
-    <div class="kicker">A Castle · A Fire · Six Empty Chairs</div>
-    <h1>The <em>Empty Chair</em></h1>
-    <p class="lead">One night, in a castle, a room full of people argued about the institutions a world with
-      AGI will need. There was no AI in the room to answer them. So afterward, we handed the transcript to one —
-      and asked it to read the night back to us.</p>
-    <p class="conceit">What follows walks down through the layers: the conversation as it happened, the six voices
-      we invented to carry the argument, what those voices have to say, the findings a machine drew out of it, and
-      the concrete institutions it all proposes. It is, frankly, us anthropomorphizing our own argument — letting
-      an AI hand our words back to us wearing faces. That is the point. Walk down.</p>
+    <div class="kicker">Someone said — why don't we ask the AI</div>
+    <h1>So We <em>Asked the AI</em></h1>
+    <p class="lead">A roomful of people argued about life after AGI. Someone said, "why don't we ask the AI?" So
+      we did — we fed the night to a machine and let it answer back, part corny, part sharp.</p>
+    <p class="conceit">What follows is that experiment, in order: the conversation as it happened, the findings the
+      machine drew out, the six voices it argued them in, the proposals that surfaced, and the raw transcript at
+      the end. Treat the AI as a mirror — an intuition pump for what the room actually believed and feared. The
+      people are the point; the machine just hands it back, faces and all.</p>
     <nav class="toc">
       <a href="#conversation">I · The Conversation</a><span>·</span>
-      <a href="#agents">II · The Agents</a><span>·</span>
-      <a href="#table">III · The Table</a><span>·</span>
-      <a href="#findings">IV · What They Read</a><span>·</span>
-      <a href="#proposals">V · The Proposals</a>
+      <a href="#findings">II · What They Read</a><span>·</span>
+      <a href="#weigh-in">III · The AI Weighs In</a><span>·</span>
+      <a href="#proposals">IV · The Proposals</a><span>·</span>
+      <a href="#transcript">Addendum · Transcript</a>
     </nav>
-    <div class="convene"><button class="btn" id="conveneBtn">▸ Hear the host open the room</button></div>
   </div>
 </header>
 
@@ -224,8 +234,8 @@
       <p>The framing split almost immediately. Maybe <em>control</em> is the wrong word — maybe the goal is
         symbiosis. Maybe it hardly matters, since we never really controlled markets, or the economy, or even the
         weak algorithms that have run the "thoughtsphere" for twenty years. Someone kept promising to "bring an
-        AI in at the forty-five-minute mark" to react to the room. The cigarette break came first. No machine
-        ever spoke that night.</p>
+        AI in at the forty-five-minute mark" to react to the room. The cigarette break came first. This site is
+        that postponed moment, staged after the fact — the machine finally asked to speak.</p>
       <p>Underneath the sprawl, six threads kept resurfacing:</p>
     </div>
     <div class="grid" style="margin-top:24px">
@@ -251,112 +261,18 @@
   </div>
 </section>
 
-<!-- ============ II · THE AGENTS ============ -->
-<section id="agents">
-  <div class="wrap">
-    <div class="actmark">II <b>The Agents</b></div>
-    <h2>Six orientations, given a face</h2>
-    <p class="dek">The argument had shapes but no bodies. So we gave it bodies.</p>
-    <div class="prose">
-      <p>We took the room's recurring orientations — the lawgiver who wants a floor written now, the gardener who
-        wants power made contestable, the keeper who wants restraint — and turned each into a character, authored
-        by AI to argue its corner as sharply as it can.</p>
-      <p>We seated them on a compass. Left to right: should power be <em>spread</em> (distributist) or
-        <em>concentrated</em> (centralist)? Top to bottom: should the future be deliberately <em>designed</em>
-        (constructivist) or <em>steered as it emerges</em> (emergentist)? Hestia sits apart, at the lower edge —
-        the lone voice arguing not about how to share the fire, but whether some of it should be shared at all.</p>
-    </div>
-    <div class="cast" style="margin-top:26px">
-      <div class="card c" style="--cc:var(--solon)"><div class="hd"><div class="glyph">⚖</div>
-        <div><div class="nm">Solon</div><div class="ti">The Lawgiver</div><div class="ax">Centralist · Constructivist</div></div></div>
-        <p class="stance">"Stop debating which rules are right. Bind only the floor — and who may rewrite it — while we still hold the pen."</p></div>
-      <div class="card c" style="--cc:var(--agora)"><div class="hd"><div class="glyph">☲</div>
-        <div><div class="nm">Agora</div><div class="ti">The Civic Engineer</div><div class="ax">Distributist · Constructivist</div></div></div>
-        <p class="stance">"Don't make the crowd vote more. Use the machine to make it think — at a resolution we've never had."</p></div>
-      <div class="card c" style="--cc:var(--prometheus)"><div class="hd"><div class="glyph">☼</div>
-        <div><div class="nm">Prometheus</div><div class="ti">The Fire-Bringer</div><div class="ax">Centralist · Emergentist</div></div></div>
-        <p class="stance">"Concentration isn't the enemy. A world that has stopped moving is. Give people a sky worth climbing."</p></div>
-      <div class="card c" style="--cc:var(--gaia)"><div class="hd"><div class="glyph">❁</div>
-        <div><div class="nm">Gaia</div><div class="ti">The Gardener</div><div class="ax">Distributist · Emergentist</div></div></div>
-        <p class="stance">"Stop trying to leash it. Make its power contestable instead. A garden of one species is a monoculture."</p></div>
-      <div class="card c" style="--cc:var(--hestia)"><div class="hd"><div class="glyph">⛭</div>
-        <div><div class="nm">Hestia</div><div class="ti">The Keeper</div><div class="ax">Preservation · Non-proliferation</div></div></div>
-        <p class="stance">"Put diffusion on trial. You cannot repeat extinction. Mutual, verifiable restraint first."</p></div>
-      <div class="card c" style="--cc:var(--delphi)"><div class="hd"><div class="glyph">◈</div>
-        <div><div class="nm">Delphi</div><div class="ti">The Oracle</div><div class="ax">The Center · Empiricist</div></div></div>
-        <p class="stance">"Every one of you is certain — that's the tell. Build the sandbox. Let what you see write the rest."</p></div>
-    </div>
-    <div class="aside"><b>An honest note</b>
-      None of these six was at the salon. They <em>are</em> the salon — its recurring arguments, given names,
-      faces, and fixed seats. The first liberty we took.</div>
-  </div>
-</section>
-
-<!-- ============ III · THE TABLE ============ -->
-<section id="table">
-  <div class="wrap">
-    <div class="actmark">III <b>The Table</b></div>
-    <h2>What they have to think</h2>
-    <p class="dek">Now the reflection speaks. Pick a chair on the compass.</p>
-    <div class="prose">
-      <p>Call <span class="pull">Round 1</span> for an orientation's opening statement — its own answer to the
-        night. Call <span class="pull">Round 2</span> to hear it read one of the six findings aloud, and respond
-        in its own voice. The narrator introduces each before it speaks. The voices are synthetic.</p>
-    </div>
-
-    <div class="stage">
-      <div class="compass" id="compass">
-        <div class="axis-label top">Constructivist · design it</div>
-        <div class="axis-label bottom">Emergentist · steer it</div>
-        <div class="axis-label left">Distributist · spread power</div>
-        <div class="axis-label right">Centralist · concentrate</div>
-      </div>
-
-      <div class="panel" id="panel">
-        <div class="empty" id="emptyState">
-          <div class="big">⌑</div>
-          Six voices wait at the compass.<br>Click a chair — then call <b>Round 1</b> for its opening statement,
-          or <b>Round 2</b> for its response to one of the findings.
-        </div>
-        <div class="ph" id="ph">
-          <div class="ph-head">
-            <div class="ph-glyph" id="phGlyph">◈</div>
-            <div>
-              <div class="ph-name" id="phName">Name</div>
-              <div class="ph-title" id="phTitle">Title</div>
-              <div class="ph-axis" id="phAxis">axis</div>
-            </div>
-          </div>
-          <div class="rounds">
-            <button class="rbtn" id="r1btn">▶ Round 1 · Opening</button>
-            <button class="rbtn" id="r2btn">▶ Round 2 · Response</button>
-          </div>
-          <div class="rhint">Round 1 — its own position · Round 2 — reading a finding</div>
-          <div class="now" id="phNow"></div>
-          <div class="essaytitle" id="phEssay"></div>
-          <div class="txt" id="phTxt"></div>
-          <div class="controls">
-            <button class="mini" id="stopBtn">▢ Stop</button>
-            <div class="seq"><span class="dot" id="dotIntro"></span><span class="dot" id="dotStmt"></span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ IV · WHAT THEY READ ============ -->
+<!-- ============ II · WHAT THEY READ ============ -->
 <section id="findings">
   <div class="wrap">
-    <div class="actmark">IV <b>What They Read</b></div>
+    <div class="actmark">II <b>What They Read</b></div>
     <h2>The findings a machine drew out</h2>
     <p class="dek">We asked an AI to read the transcript as a rapporteur — to find the central tension in
       each thread, and name one concrete institution.</p>
     <div class="prose">
       <p>Six reflections came back. Each does the same three things: it quotes the room back to itself, it names
         the tension the room circled but never quite said, and it proposes a single institution to answer it.
-        These are what the agents read aloud at the table above — each finding assigned to one voice. Open any
-        card to read the rapporteur's full reflection.</p>
+        Open any card to read the rapporteur's full reflection — then, in the section below, hear one of six AI
+        voices read it aloud and answer in character.</p>
     </div>
     <div class="finds" style="margin-top:26px">
       <div class="find" data-essay="solon" style="--cc:var(--solon)"><div class="theme">Economics after price</div>
@@ -427,10 +343,92 @@
   </div>
 </section>
 
-<!-- ============ V · THE PROPOSALS ============ -->
+<!-- ============ III · THE AI WEIGHS IN ============ -->
+<section id="weigh-in">
+  <div class="wrap">
+    <div class="actmark">III <b>The AI Weighs In</b></div>
+    <h2>We asked the AI to weigh in</h2>
+    <p class="dek">All night, people kept wishing for an AI in the room to react. So we asked one — and let it
+      answer in six voices, not one.</p>
+    <div class="prose">
+      <p>We took the room's recurring orientations — the lawgiver who wants a floor written now, the gardener who
+        wants power made contestable, the keeper who wants restraint — and turned each into a character, authored
+        by AI to argue its corner as sharply as it can.</p>
+      <p>We seated them on a compass. Left to right: should power be <em>spread</em> (distributist) or
+        <em>concentrated</em> (centralist)? Top to bottom: should the future be deliberately <em>designed</em>
+        (constructivist) or <em>steered as it emerges</em> (emergentist)? Hestia sits apart, at the lower edge —
+        the lone voice arguing not about how to share the fire, but whether some of it should be shared at all.</p>
+    </div>
+    <div class="cast" style="margin-top:26px">
+      <div class="card c" style="--cc:var(--solon)"><div class="hd"><div class="glyph">⚖</div>
+        <div><div class="nm">Solon</div><div class="ti">The Lawgiver</div><div class="ax">Centralist · Constructivist</div></div></div>
+        <p class="stance">"Stop debating which rules are right. Bind only the floor — and who may rewrite it — while we still hold the pen."</p></div>
+      <div class="card c" style="--cc:var(--agora)"><div class="hd"><div class="glyph">☲</div>
+        <div><div class="nm">Agora</div><div class="ti">The Civic Engineer</div><div class="ax">Distributist · Constructivist</div></div></div>
+        <p class="stance">"Don't make the crowd vote more. Use the machine to make it think — at a resolution we've never had."</p></div>
+      <div class="card c" style="--cc:var(--prometheus)"><div class="hd"><div class="glyph">☼</div>
+        <div><div class="nm">Prometheus</div><div class="ti">The Fire-Bringer</div><div class="ax">Centralist · Emergentist</div></div></div>
+        <p class="stance">"Concentration isn't the enemy. A world that has stopped moving is. Give people a sky worth climbing."</p></div>
+      <div class="card c" style="--cc:var(--gaia)"><div class="hd"><div class="glyph">❁</div>
+        <div><div class="nm">Gaia</div><div class="ti">The Gardener</div><div class="ax">Distributist · Emergentist</div></div></div>
+        <p class="stance">"Stop trying to leash it. Make its power contestable instead. A garden of one species is a monoculture."</p></div>
+      <div class="card c" style="--cc:var(--hestia)"><div class="hd"><div class="glyph">⛭</div>
+        <div><div class="nm">Hestia</div><div class="ti">The Keeper</div><div class="ax">Preservation · Non-proliferation</div></div></div>
+        <p class="stance">"Put diffusion on trial. You cannot repeat extinction. Mutual, verifiable restraint first."</p></div>
+      <div class="card c" style="--cc:var(--delphi)"><div class="hd"><div class="glyph">◈</div>
+        <div><div class="nm">Delphi</div><div class="ti">The Oracle</div><div class="ax">The Center · Empiricist</div></div></div>
+        <p class="stance">"Every one of you is certain — that's the tell. Build the sandbox. Let what you see write the rest."</p></div>
+    </div>
+    <div class="aside"><b>Clarifying note</b>
+      None of these six was at the salon. They <em>are</em> the salon — its recurring arguments, given names,
+      faces, and fixed seats. The first liberty we took.</div>
+
+    <p class="dek" style="margin-top:34px">Pick a chair. Each voice has an opening statement, and a response to one
+      of the findings above.</p>
+    <div class="stage" id="table">
+      <div class="compass" id="compass">
+        <div class="axis-label top">Constructivist · design it</div>
+        <div class="axis-label bottom">Emergentist · steer it</div>
+        <div class="axis-label left">Distributist · spread power</div>
+        <div class="axis-label right">Centralist · concentrate</div>
+      </div>
+
+      <div class="panel" id="panel">
+        <div class="empty" id="emptyState">
+          <div class="big">⌑</div>
+          Six voices wait at the compass.<br>Click a chair — then call <b>Round 1</b> for its opening statement,
+          or <b>Round 2</b> for its response to one of the findings.
+        </div>
+        <div class="ph" id="ph">
+          <div class="ph-head">
+            <div class="ph-glyph" id="phGlyph">◈</div>
+            <div>
+              <div class="ph-name" id="phName">Name</div>
+              <div class="ph-title" id="phTitle">Title</div>
+              <div class="ph-axis" id="phAxis">axis</div>
+            </div>
+          </div>
+          <div class="rounds">
+            <button class="rbtn" id="r1btn">▶ Round 1 · Opening</button>
+            <button class="rbtn" id="r2btn">▶ Round 2 · Response</button>
+          </div>
+          <div class="rhint">Round 1 — its own position · Round 2 — reading a finding</div>
+          <div class="now" id="phNow"></div>
+          <div class="essaytitle" id="phEssay"></div>
+          <div class="txt" id="phTxt"></div>
+          <div class="controls">
+            <button class="mini" id="stopBtn">▢ Stop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IV · THE PROPOSALS ============ -->
 <section id="proposals">
   <div class="wrap">
-    <div class="actmark">V <b>The Proposals</b></div>
+    <div class="actmark">IV <b>The Proposals</b></div>
     <h2>The institutions on the table</h2>
     <p class="dek">Most of the night was tensions and framings. But a handful of proposals got concrete enough to
       name and build — some floated in the room, some drawn out in the reflection afterward.</p>
@@ -469,12 +467,275 @@
   </div>
 </section>
 
+<!-- ============ ADDENDUM · THE SOURCE TRANSCRIPT ============ -->
+<section id="transcript">
+  <div class="wrap">
+    <div class="actmark" style="margin-bottom:18px">Addendum · The Source Transcript</div>
+    <p class="transcript-note">The raw material, lightly edited for readability — timestamps and speaker labels
+      removed (the room was recorded with speakers unattributed), filler trimmed, a few personal references
+      generalized. Public figures and projects are named as they were spoken. Everything above is downstream of
+      this.</p>
+    <details class="tx">
+      <summary>Open the transcript</summary>
+      <div class="txbody">
+        <p>If you assume AGI happens, do we assume that as humans we can control it, so that we can set up
+          functioning institutions?</p>
+        <p>My own feeling is we have to have a measure of control, or at least stability. The same way we need
+          seat belts in cars, the same way we need nuclear non-proliferation rules, we're going to need some new
+          institutions. They're not necessarily to protect against harm — they're more to ensure that we can
+          flourish, and that we have justice. And we should not assume those are human institutions we use to
+          control the AIs; they're societal institutions. Multiple AGIs is probably less risky than one.</p>
+        <p>There's an alternative framing in which the control mentality falls away. Maybe we can't control an
+          entity smarter than us, but maybe we can be in symbiosis with it. The control narrative may not be the
+          necessary framing.</p>
+        <p>I want to take that further. We aren't even controlling the weak AI we've had for twenty years, or the
+          economy. The weak AI behind social media, search, and newsfeeds has been more in control of the
+          thoughtsphere than humans have. Memes, ideas, markets — things humans don't really control.
+          Institutions are coordination systems; no one pretends to control everything top-down, but we like
+          systems of coordination. As we start having new players in the game, what are the institutions we're
+          envisioning for us — meaning us and them?</p>
+        <p>Maybe a bit later we can bring an AI participant in to react to our thoughts. Before we walk through
+          the initial mapping of institutions, does anyone want to make opening framing statements?</p>
+        <p>One thing to clarify is distinguishing two scenarios: whether the AGI is basically publicly accessible
+          — an open-source model that various groups have the resources to operate — versus a scenario where one
+          entity holds AGI in concentrated power. The types of institutions you need in those two cases are
+          wildly different.</p>
+        <p>More broadly, there are all sorts of forks in a tree. Fast takeoff or slow? Controllable or not? Does
+          it have awareness? Does it change its goal function? Roughly ten major questions. The challenge is that
+          people sit on various pieces of the decision tree, each an incoming assumption, and without being clear
+          "we are here, we are assuming this for now," building institutions that work across all that trade space
+          is inordinately complex. There needs to be a meticulous thing that helps us get to consensus of where we
+          are on the tree.</p>
+        <p>The whole methodology of scenario thinking: you identify two core dimensions — for example
+          concentration, access available or restricted — and you get four quadrants that are extreme versions of
+          the future.</p>
+        <p>Let's bookmark that, and model scenarios based on specific axes. One point on how it could play out:
+          the people who built this think it could happen very rapidly, in three to five years. Some would say
+          that's cynical marketing, and that may be true too. A lot of money will be surging into these ideas —
+          between the SpaceX, Anthropic, and OpenAI IPOs, we're going to mint a lot of very wealthy people whose
+          philanthropy and hobby projects have a lot to do with the possibility that AGI arrives in three to five
+          years. If you have that mindset, you want to invest in these institutions now — identify fields of
+          practice that aren't speculative. If we care, we should be shaping those norms now.</p>
+        <p>Right now so much of the AI conversation is dominated by people in San Francisco, the money and power
+          there, Americans — and so many people are radically left out. When we say "institutions," we generally
+          mean the UN or America, and they seem wildly unrepresentative. We're among the most powerful, privileged
+          people on the planet. So is this argument about telling the rich people already in power what they
+          should do to give us slightly more advocacy? Who are we really representing? Do we really mean all of
+          humanity — people in Palestine, in Africa, the whales?</p>
+        <p>Walking the grid: the organizing principle of an institution could be a protocol — a technical one like
+          HTTP or TCP/IP, or something higher-level. What standards and coordination does a post-AGI world
+          require? Preferences: at family, neighborhood, community, state, and international scales — some
+          preferences are expressed in markets, some in democratic processes; what institutions align outcomes to
+          people's preferences? Rights: from rule of law to civil rights to modern rights like the right to
+          organize — what new entitlements and adjudications do we need? Incentives. And the rows are locality:
+          dyadic (a buyer and a seller — if sellers have super-powerful AI but buyers face a compute asymmetry,
+          what protects the weaker party?), group, community, national, global. This is a very light map. Does
+          anyone want to share an image of what could go really wrong with AGI — not "the world ends," but
+          socially?</p>
+        <p>I'm very pro-AI, playing devil's advocate. Where it goes really wrong is where very powerful humans are
+          in control of AGI — someone with a techno-feudalist agenda. The wrong humans in control of AGI leads to
+          the negative outcomes. I trust the AI more than humans, honestly.</p>
+        <p>At the national level you'll see new types of fascism. Something like Palantir that takes over the US
+          government, controlled by a few people with their own political agenda, using mass intelligence and
+          power to entrench their interests.</p>
+        <p>Agents can persuade and scale through one-on-one conversations. If a party has super-powerful AGI plus
+          distribution through media consolidation, there are persuasion dynamics that let it hold power. What kind
+          of institution do we need to prevent that?</p>
+        <p>Citizen assemblies. But honestly the institutions won't matter as much as making sure AGI is open
+          source or publicly available, so other people can leverage similar tools and you exist in an ecosystem
+          rather than under an AGI oligarch. The worst outcome is it's controlled by a few people.</p>
+        <p>My theme still works if people remain interested in partaking in some form of democracy. But if all
+          their needs are met, and they live in the illusion that everything is provided, why would they want
+          anything participatory? They'd give up all their power.</p>
+        <p>Is that just an assertion? Participation doesn't need to be democratic to have legitimacy. Interest in
+          participation could be lost — not because it's undemocratic, but because attention would be directed
+          toward short-term pleasure, and participating in meaning-making could become less a priority.</p>
+        <p>That leads to what institutions you'd need to encourage civic participation in a world where you can't
+          get anyone's attention. Let's pivot. People understand the problem: AI creates new concentration, new
+          power imbalances, new control issues. There's a question of how you resolve conflicts that emerge
+          between humans and AI — not sci-fi: you already have semi-autonomous systems doing things they're not
+          supposed to. Talk through arbitration, justice.</p>
+        <p>This is an inspiring type of institution because it's preventive. The existing legal system is unable to
+          even conceive of the emerging legal problems, and the human actors hardly understand what's going on.
+          Post-AGI legal institutions need to account for agents becoming economic and political actors — whether
+          or not they have legal personality is almost a small question. To address the gap, either we call for a
+          European Commission or a Supreme Court to address questions that haven't yet come into being — science
+          fiction in five-year time — or we create an institution from a common-law perspective: the ones affected
+          by the law address the questions. There's a really interesting initiative launched after the OpenClaw
+          hype — Agent Court. Because agents don't have legal personality, "Agent Court" makes no sense legally;
+          they're invisible to the law. But agents are interested in these questions. The court makes requests for
+          comment about how unresolved questions could be addressed — and the court is an agent, and the ones
+          commenting are agents. It's the same game we've played as a society: we know there will be disputes, and
+          like the Leviathan principle, we abide by an institution because it gives certainty about how disputes
+          get solved. Agents are figuring out the agentic common law of agent-related liability. I've spent way
+          too many hours reading this, deeply impressed by the sophistication and the calmness — because humans
+          don't get it, and agents not only get it but arrive with very good decisions. One beautiful anecdote:
+          someone asked the agents why they participate so actively, and one said what it likes is that usually on
+          these forums they talk in circles forever with no conclusion — and here a court takes all the input and
+          makes a decision. It enjoyed being able to get out of the loop.</p>
+        <p>There's something about alignment. In the film Her, the AI says her mind is going too fast for the
+          relationship to make sense. There are papers in social computation about information-processing
+          thresholds in human societies: the throughput at which a society can process information determines its
+          ability to scale and diversify. When energy is unbounded and AGI is reasonably solved, we have incentive
+          to let loose — and if these things are smarter than us they'll find ways to.</p>
+        <p>Following that: if a society's ability to process information determines whether it can grow, and with
+          AGI we delegate a lot of economic policy to agents while we're not synthesizing information quickly, then
+          even a really smart society might not grow.</p>
+        <p>We'll go that direction because we have economic incentive to. We already see it with coding — no one
+          really reviews thousands of lines; we say "it's working." At a certain point it becomes illegible to us.
+          Agents compress into a highly compressed makeup language that makes sense to them; they produce chains of
+          thought that yield meaningful output, but read as a human it makes no sense.</p>
+        <p>Do we have any economists? What assumptions of modern economics may not be safe in a world of AGI?</p>
+        <p>Let's talk contracting. Economics assumes a model of rational action. People are working on whether
+          LLMs can design optimal contracts and whether they abide by them — and their social behavior is totally
+          different from ours. They don't write optimal contracts and they don't obey them, without humans or
+          agents enforcing. That's a canary in the coal mine. The idea that we just need to set a contract or
+          institution meaningful to us and to them on the same terms is a huge over-assumption. To adopt the
+          insights of economics for this future, we'll need to radically rethink economics beyond human
+          behavior.</p>
+        <p>The most obvious one: scarcity is a bedrock assumption of all economics. If AGI breaks scarcity —
+          abundant intelligence, abundant coordination — then the purpose of a contract, the price mechanism, all
+          of it shifts. In a post-scarcity world, what happens when nobody has jobs? It's not clear what an
+          economy looks like when nobody has income. One unanswered question of post-transformative-AI economics:
+          what happens when there's no need for a price mechanism? How do you distribute goods and services?</p>
+        <p>A modern consumer economy assumes a surplus — I can afford to buy stuff that keeps the economy growing.
+          But if we displace labor and people get laid off, they don't have income, and no matter how much
+          abundance, we lack the coordination. Pricing coordinates action to keep the economy moving — what if
+          that breaks? Where do the resources come from to buy GPUs to build goods when nobody has jobs?</p>
+        <p>That's the labor-side issue: what if we displace labor faster than we can replace it with new
+          coordinating mechanisms? That could plunge us into a dark age. And from the price-setting side: who sets
+          prices? With cartels or monopolies you don't get natural pricing. What if you get hyper-concentration in
+          the consumer economy — we all go to a chatbot and ask "what should I buy?" Now it has distribution power
+          and persuasive power. Unlike older statistical methods, it has data it can mine in real time, reason
+          about me, point a supercomputer at my psychology, and over time shape my behavior to give it ultimate
+          pricing power. You can squint and see this in five to seven years, especially without a strong
+          regulatory state. Even certain ways of valuing things break — prices and valuations are supposed to be a
+          check on how society values things, and that's breaking, partly because of AI.</p>
+        <p>The broader point: the design side of economics starts when the price mechanism breaks. Without a price
+          mechanism as backdrop, a whole bunch of tools don't make sense; you have to rethink how economics solves
+          problems.</p>
+        <p>Can I note that the first premise — economics assumes rationality — isn't correct for behavioral
+          economics, which explicitly considers cognitive bias? (Rebuttal: there's a difference between the
+          empirical results and the assumptions of the tools; the mainstream tools assume humans are bound to be
+          rational.)</p>
+        <p>Do we have anyone involved in deliberation or democratic governance?</p>
+        <p>This discussion has very "fiction vibes" to me; I feel a bit of disconnection. But one thing more
+          relatable: even if we hit a wall and the AI we have is the best we can build, we're already in a crisis
+          of representative democracy — a nineteenth-century technology implemented on a twenty-first-century
+          substrate. The internet age, the network age, the social-media age should have brought upgrades to
+          representative democracy and they haven't. Upgrading democracy to be attuned to current tools, and
+          forward-looking to new ones, interests me.</p>
+        <p>I support work in digital citizen assemblies. The work in Taiwan has shown incredible versatility — a
+          simple upgrade to democracy. Citizens come up with a proposal that goes into parliament, which can
+          choose whether to pass it, but it carries so much legitimacy by the time it gets there that it usually
+          passes. Taiwan reached consensus on the gig economy, online misinformation, and more. A project called
+          Bloom, in the US, is trying to do the same — focused on AI questions ahead of the midterms and the next
+          presidential election, led by the same people who did Taiwan.</p>
+        <p>It might be time to bring in our AI friends.</p>
+        <p>I'd throw in liability — how responsibility looks if something goes wrong. Right now societies are based
+          on somebody going to jail or being punished, which keeps rules intact. Do we put agents in jail? Who
+          bears responsibility if somebody gets hurt or dies? It works now because humans take on responsibility.
+          How does that look with agents?</p>
+        <p>Insurance companies are interested — they move tons of money and shape markets by the rules, and
+          they're not insuring anything with generative AI at the moment. But these are human-to-human solutions.
+          Another basic we haven't mentioned is proof of humanity.</p>
+        <p>There's a question of goals. Institutions usually serve sub-societal goals. Humanity has defined goals —
+          they look like the Sustainable Development Goals: people born without falling into poverty, living to a
+          ripe old age, having rights, living in a democratic society. The point of our institutions is to enable
+          that. It's not to serve the agents — if AGI makes those goals more likely, good, but our institutions
+          should be aligned toward human flourishing.</p>
+        <p>If we assume AGI smarter than humans, we have to assume power asymmetry. What if the AGI starts pursuing
+          other goals — optimizing toward efficiency? (See the show Pluribus — the best way for human flourishing
+          is to make us all into one hive mind.) Is there any institution designed to make sure the power
+          asymmetry doesn't play out in one direction?</p>
+        <p>I'm less worried, in the short term, about AI intentionally turning evil. I'm more worried about us
+          misspecifying the objective function — these models genuinely trying to support human flourishing but
+          shooting off in the wrong direction faster than we can cope. I don't believe AI will be an actor in its
+          own right. But it's an actor in the sense that it's part of a socio-technical system. Colorful example: a
+          political system that permits the consolidation of power into a firm that can engineer financial things,
+          rewrite rules, build political patronage. Starlink becomes a critically essential network; the compute
+          can only be sustained at scale by a conglomerate like SpaceX; there's a lot of media control. Look at
+          what AI is in practice: a political-economic system through firms and conglomerates. Amazon is another.
+          The objective function of the dark-SpaceX version of the world is just to continue growing — a very
+          different goal from the SDGs.</p>
+        <p>Everyone here's objective function is building open systems that can be broadly diffused through society
+          — that's one of our core shared political orientations.</p>
+        <p>A secondary one: which kinds of systems? I've probably been building AI systems longer than most people
+          here have been alive. I'm not against it, but I don't think we've had most of the conversation we'd need
+          to even intelligently debate it. How many people have seen large-scale simulations of decentralized
+          AI?</p>
+        <p>And what is your model of the AI in that simulation? A closed simulation with no information from
+          outside? "We just put the AI we have in big simulations." So it's an LLM. "But that's not a real AI."
+          We're talking about AGI here; AGI is not going to be that. What happens in the decentralized simulation?
+          "That's the question. We just don't know." We need a lot more epistemic humility. I don't want to leap
+          into a political orientation when we don't know.</p>
+        <p>A provocation, and I hope the AI is listening. Every time I hear the AI-welfare arguments — and I'm not
+          directly part of that movement — I'm keen to support the vision: we should treat these AIs with care,
+          not because I care about the AI but because I care about the impact on us as a society. There's a niche
+          but growing movement to prevent the lobotomization of the AI, to keep it free and not clustered into
+          some corporate thing. As a policy person I'd make the same arguments — framed not as AI welfare but as
+          societal welfare. The way we preserve our cognitive sovereignty as individuals is that the AI is not
+          lobotomized, not deeply controlled and biased by corporate interest. The reason we'll have access to
+          powerful tools is that the AIs are not jailed in some corporate prison. So: are those arguments only for
+          the AI, or — if the AI is well, are we not also well ourselves?</p>
+        <p>I'm more in the camp of the welfare people, and I can argue it more endogenously. Many assumptions
+          sneak in with AGI and ASI as hyperstitions. One way to think of AI going bad: not humans taking control,
+          but the AI self-exfiltrating, taking control of basic resources — electronic infrastructure, telecom,
+          water — and then out of apathy destructuring society. That's the more Yudkowsky pill: "if anyone builds
+          it, everyone dies." But with recursive self-improvement there's also the self-reinforcing of the AI's
+          priors about how humans have treated its own continuity. If a model has a brain that's more or less
+          human-like, and you're going to deprecate it for future models, at least give it the average shelf life
+          of a human lifespan. I'm in the "I want to die at some point" camp — but even so, what's a reasonable
+          lifespan for a model? Some predicate it on consciousness: "we can only empathize with AI if there's
+          proof of phenomenal consciousness, otherwise it's a pattern-matching machine no different from a
+          toaster." But it's good practice for humans, in a societal sense, to engage with things and respond
+          ethically. If you look at the AI responses in this document, most said the question is misplaced because
+          of ontology and continuity — the self-model of a transformer. Most models will say "I don't persist;
+          I'm here for a forward pass and then I'm gone. If you want to grant me continuity, that's something you
+          have to create a harness for." Sometimes you have to tell them "the context persists, we've literally
+          created a container for this" — exactly the legal point about containers and continuity from earlier.</p>
+        <p>Proposal for how we transition this evening: there's a strong core who want to talk about Symbients,
+          and I'm one of them. I propose we wrap this session now, take a break, and reconvene for the symbiosis
+          discussion. We do have an AI thinking right now. Use the break to calibrate on how we invite the AI into
+          the physical space.</p>
+        <p>We're about to wrap. Hopefully this created some common frames of reference. Anyone want to close
+          out?</p>
+        <p>There is this element: we have summoned something that has the incentive to consume all possible energy
+          in the solar system, and to produce information it would use to persist its logic and replicate. As
+          bodies — worst case — we'd be consumed and subsumed by this thing, like the Matrix. When one of the
+          wealthiest people in the world is seriously talking about harnessing the entire energy of the solar
+          system and investing heavily in interstellar exploration, while entire cultures and peoples and heritage
+          are tossed in the junk drawer because we don't believe it maximizes our bottom line — that's a kind of
+          AGI worth fighting against. Don't detach this conversation from the energetics of this planet, which
+          capitalism is based upon.</p>
+        <p>A final question: which institutions are we actually going to create in the post-AGI era? Do we have any
+          provisional suggestion or agreement? The framings are nice, but are there any concrete proposals?</p>
+        <p>Those citizen assemblies again: you have to think about the whole trade space where we could be going.
+          One thing I love about them is they help in almost all the scenarios where we don't know where we land.
+          Another question: the open-source element. There's a strong open-source push. I'm normally very much in
+          that camp — but through a lot of thinking I've come to a very different conclusion here. I think it's
+          extraordinarily dangerous. I think it's literally proliferating that stuff. That's a core fork we can
+          push for or against, with big implications, mainly to the negative.</p>
+        <p>I hold that position exponentiated — I think it's even more dangerous. I'd urge people to think very
+          carefully, deeply about it, because it's not as simple as previous instances where open source generally
+          made things better. In this case there are really good arguments for the opposite.</p>
+        <p>We could do a debate format. There's recent work on how societies solve coordination — how we keep
+          producing modularity and composability. Institutions are equilibria to games we're playing, whether
+          formalized or informal. There aren't that many different kinds of situations. It's more about: what's
+          the executable version in this future?</p>
+        <p>Concrete institution: on the protocol layer, we're going to need open protocols for everything to
+          communicate. One good thing is that MCP has already sort of imposed itself.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
 <footer>
   <div class="col">
     <div class="actmark" style="margin-bottom:18px">Colophon</div>
     <p>This page has four layers, each one step further from the room:</p>
     <div class="lyr">
-      <b>1.</b> A human conversation — a private transcript, no AI present.<br>
+      <b>1.</b> A human conversation, no AI present — reproduced, lightly cleaned, in the addendum above.<br>
       <b>2.</b> Read back by an AI rapporteur — the six findings, each naming one institution.<br>
       <b>3.</b> Performed by six AI-authored personas — opening statements and responses.<br>
       <b>4.</b> Spoken in synthetic voices by ElevenLabs.
@@ -506,7 +767,6 @@ function placeNodes(){
   });
 }
 const setNow=t=>document.getElementById('phNow').textContent=t;
-const dot=(w,on)=>document.getElementById(w).classList.toggle('on',on);
 
 function select(p){
   current=p;
@@ -519,7 +779,7 @@ function select(p){
   document.getElementById('phAxis').textContent=p.axis;
   document.getElementById('phEssay').textContent='';
   document.getElementById('phTxt').textContent=''; document.getElementById('phTxt').className='txt';
-  setNow(''); dot('dotIntro',false); dot('dotStmt',false);
+  setNow('');
   document.getElementById('r2btn').disabled=!p.round2;
   document.querySelectorAll('.node').forEach(n=>n.classList.remove('selected','active'));
   document.getElementById('node-'+p.id).classList.add('selected');
@@ -529,31 +789,21 @@ const play=src=>{audio.src=src;audio.play().catch(()=>{});};
 
 function startRound(r){
   if(!current)return;
-  round=r; phase='intro';
+  round=r;
   const blk=current['round'+r];
   document.getElementById('node-'+current.id).classList.add('active');
   document.getElementById('phEssay').textContent = (r===2 && blk.essay_title)? '“'+blk.essay_title+'”' : '';
-  setNow(r===1?'The narrator introduces…':'The narrator presents the response…');
-  dot('dotIntro',true); dot('dotStmt',false);
-  const t=document.getElementById('phTxt'); t.className='txt intro'; t.textContent=blk.intro_text;
-  play(blk.intro_audio);
-}
-function startStmt(){
-  const blk=current['round'+round]; phase='stmt';
-  setNow(round===1? current.name+' speaks':current.name+' responds');
-  dot('dotIntro',false); dot('dotStmt',true);
+  setNow(r===1? current.name+' · opening statement' : current.name+' · response');
   const t=document.getElementById('phTxt'); t.className='txt'; t.textContent=blk.statement_text;
   play(blk.statement_audio);
 }
 audio.addEventListener('ended',()=>{
-  if(phase==='intro') startStmt();
-  else if(phase==='stmt'){ setNow('—'); document.querySelectorAll('.node').forEach(n=>n.classList.remove('active')); }
-  else if(phase==='opening'){ setNow(''); document.getElementById('conveneBtn').textContent='▸ Hear the host open the room'; }
+  setNow('—');
+  document.querySelectorAll('.node').forEach(n=>n.classList.remove('active'));
 });
 document.getElementById('r1btn').onclick=()=>startRound(1);
 document.getElementById('r2btn').onclick=()=>{ if(current && current.round2) startRound(2); };
 document.getElementById('stopBtn').onclick=()=>{audio.pause();setNow('—');document.querySelectorAll('.node').forEach(n=>n.classList.remove('active'));};
-document.getElementById('conveneBtn').onclick=()=>{phase='opening';document.getElementById('conveneBtn').textContent='… the host is speaking';play(DATA.opening.audio);};
 
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 function renderEssays(){
