@@ -2,10 +2,10 @@
 
 *A post-AGI salon, played back by a machine.*
 
-A roomful of people spent an evening arguing about the institutions a world with AGI will
-need. No AI was in the room. Afterward, we fed the transcript to one and let it answer back —
-as six voices, each a political orientation drawn from the conversation. The AI is a mirror;
-the people in the room are the point.
+A group of people spent an evening at AI Renaissance 2026 arguing about the institutions a
+world with AGI will need. No AI was in the group. Afterward, we fed the transcript to one and
+let it answer back — as six voices, each a political orientation drawn from the conversation.
+The AI is a mirror; the people in the group are the point.
 
 The page walks through it in order:
 
